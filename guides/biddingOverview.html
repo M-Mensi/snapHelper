@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Snapchat Strategist · Bidding Strategies (EN/AR)</title>
+<link rel="stylesheet" href="../styles.css" />
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;} @media (max-width:900px){.grid{grid-template-columns:1fr;}}
+  .small{font-size:.9rem;}
+</style>
+</head>
+<body>
+<header>
+  <h1>Snapchat Strategist · Bidding Strategies (EN/AR)</h1>
+  <div class="meta">Explain every bid type, when to use it, and how to choose—plus suggested bids & learning phase</div>
+</header>
+
+<div class="wrap">
+
+  <div class="notice">
+    <strong>Goal of this call:</strong> help the advertiser understand the <strong>three bidding strategies</strong>—<em>Auto‑Bidding</em>, <em>Target Cost</em>, <em>Max Bid</em>—and pick the right one for their <strong>objective, cost control, and scale</strong>. <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a>
+  </div>
+
+  <section id="legend" class="legend">
+    <div class="kicker">Legend</div>
+    <h2>How to Navigate</h2>
+    <table>
+      <thead><tr><th>Element</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip">Go to →</span></td><td class="muted">Jump to referenced section.</td></tr>
+        <tr><td><span class="chip ok">Yes</span> / <span class="chip warn">Objection</span></td><td class="muted">Branch based on customer response.</td></tr>
+        <tr><td>EN / AR cells</td><td class="muted">Scripts in both languages for live delivery.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="toc" class="toc">
+    <div class="kicker">Navigation</div>
+    <h2>Meeting stages</h2>
+    <div class="grid">
+      <div>
+        <ul>
+          <li><a href="#opening">1. Opening & agenda</a></li>
+          <li><a href="#overview">2. Overview · What each strategy does</a></li>
+          <li><a href="#when">3. When to use what</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#walkthrough">4. Walkthrough · How to set each</a></li>
+          <li><a href="#learning">5. The learning phase</a></li>
+          <li><a href="#decision">6. Decision helper</a></li>
+          <li><a href="#tips">7. Troubleshooting & pro tips</a></li>
+          <li><a href="#quick">8. Quick objections</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK‑JUMP SUMMARY TABLE -->
+  <section id="summary_jump" class="section">
+    <div class="kicker">Quick Reference</div>
+    <h2>Jump to any part of the meeting</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>Opening & agenda</td><td><a href="#opening">Go to → Opening</a></td></tr>
+        <tr><td>Overview · What each strategy does</td><td><a href="#overview">Go to → Overview</a></td></tr>
+        <tr><td>When to use what</td><td><a href="#when">Go to → When to use</a></td></tr>
+        <tr><td>Walkthrough · How to set each</td><td><a href="#walkthrough">Go to → Walkthrough</a></td></tr>
+        <tr><td>The learning phase</td><td><a href="#learning">Go to → Learning phase</a></td></tr>
+        <tr><td>Decision helper</td><td><a href="#decision">Go to → Decision helper</a></td></tr>
+        <tr><td>Troubleshooting & pro tips</td><td><a href="#tips">Go to → Tips</a></td></tr>
+        <tr><td>Quick objections</td><td><a href="#quick">Go to → Objections</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 1. OPENING & AGENDA (conversational) -->
+  <section id="opening" class="section">
+    <div class="kicker">1</div>
+    <h2>Opening & agenda</h2>
+    <table>
+      <thead><tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Set context</td>
+          <td class="en">"Thanks for joining me today. One of the biggest levers in campaign performance is how we set up bidding. I'd like to walk you through the three bidding strategies on Snapchat – Auto‑Bidding, Target Cost, and Max Bid – so you feel confident choosing the right one for your goals. We'll also talk about the learning phase and how to avoid common pitfalls." <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td class="ar">"شكراً لانضمامك اليوم. من أكبر العوامل المؤثرة في أداء الحملات هي كيفية إعداد المزايدة. أود أن أشرح لك استراتيجيات المزايدة الثلاث على سناب شات – Auto‑Bidding، وTarget Cost، وMax Bid – حتى تختار بثقة ما يناسب أهدافك. سنتحدث أيضاً عن مرحلة التعلّم وكيفية تجنب المشكلات الشائعة." <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td><a href="#overview">Go to → Overview</a></td>
+        </tr>
+        <tr>
+          <td>Agenda</td>
+          <td class="en">"We'll cover: first, what each strategy does in plain English; then when to use which one based on your goal; I'll show you exactly how to set them up; we'll demystify the learning phase; and finally I'll give you a quick decision guide and some troubleshooting tips."</td>
+          <td class="ar">"سنغطي: أولاً، ماذا تفعل كل استراتيجية بلغة بسيطة؛ ثم متى نستخدم كل منها حسب هدفك؛ سأريك بالضبط كيف تضبطها؛ سنزيل الغموض عن مرحلة التعلّم؛ وأخيراً سأعطيك دليلاً سريعاً للقرار وبعض نصائح استكشاف الأخطاء."</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2. OVERVIEW (conversational) -->
+  <section id="overview" class="section">
+    <div class="kicker">2</div>
+    <h2>Overview · What each strategy does</h2>
+    <table>
+      <thead>
+        <tr><th>Strategy</th><th class="en">Plain‑English (EN)</th><th class="ar">تعريف مبسّط (AR)</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Auto‑Bidding</td>
+          <td class="en">"With Auto‑Bidding, we hand the reins to Snapchat. Our system will automatically set the bid for each auction to try and get you the most results possible for your budget. You don't set a bid – just the daily or lifetime budget. It's the best choice when you want maximum delivery and aren't focused on a specific cost per result." <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td class="ar">"مع Auto‑Bidding، نسلم الزمام لسناب شات. نظامنا سيحدد العطاء تلقائياً لكل مزاد ليحصل لك على أكبر عدد ممكن من النتائج ضمن ميزانيتك. أنت لا تحدّد عطاء – فقط الميزانية اليومية أو مدى الحياة. إنه الخيار الأفضل عندما تريد أقصى إنفاق ولا تركز على تكلفة محددة لكل نتيجة." <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td>[2]</td>
+        </tr>
+        <tr>
+          <td>Target Cost</td>
+          <td class="en">"Target Cost lets you set a desired average cost per result (like a purchase or install). Snapchat will then try to keep your average CPA at or below that target. Your spend may go up or down based on auction competition, but the CPA stays fairly steady. It's ideal when you have a specific CPA goal you need to hit." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar">"Target Cost يتيح لك تحديد متوسط التكلفة المطلوب لكل نتيجة (مثل عملية شراء أو تثبيت). سيحاول سناب شات بعد ذلك الحفاظ على متوسط تكلفة الاكتساب عند أو أقل من هذا الهدف. قد يرتفع أو ينخفض إنفاقك حسب المنافسة في المزاد، لكن تكلفة الاكتساب تبقى مستقرة نسبياً. إنه مثالي عندما يكون لديك هدف محدد لتكلفة الاكتساب." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>[3]</td>
+        </tr>
+        <tr>
+          <td>Max Bid</td>
+          <td class="en">"With Max Bid, you tell Snapchat the absolute most you're willing to pay for a single result. We'll bid up to that amount, but we'll try to get you the most efficient CPA possible below that cap. It gives you tight control over bid costs, but if you set it too low, your campaign may not spend your full budget. That's why we show a suggested bid range." <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td class="ar">"مع Max Bid، تخبر سناب شات بالحد الأقصى الذي ترغب في دفعه مقابل نتيجة واحدة. سنقوم بالمزايدة حتى هذا المبلغ، لكننا سنحاول الحصول على أكثر تكلفة اكتساب فعالة أقل من هذا السقف. يمنحك تحكماً دقيقاً في تكاليف العطاء، لكن إذا حددته منخفضاً جداً، قد لا تنفق حملتك ميزانيتك بالكامل. لهذا نعرض نطاق عطاء مقترح." <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td>[4]</td>
+        </tr>
+        <tr>
+          <td>Suggested Bids</td>
+          <td class="en">"When you're using Max Bid, Ads Manager will show you a suggested bid range based on historical auction data. This range tells you roughly what other advertisers are paying for similar results. I recommend starting near the high end of that range to make sure you get enough delivery, then you can adjust down later if needed." <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td class="ar">"عند استخدام Max Bid، سيعرض لك مدير الإعلانات نطاق عطاء مقترحاً بناءً على بيانات المزاد التاريخية. هذا النطاق يخبرك تقريباً بما يدفعه المعلنون الآخرون مقابل نتائج مماثلة. أوصي بالبدء قرب الحد الأعلى لهذا النطاق لضمان حصولك على إنفاق كافٍ، ثم يمكنك التعديل لاحقاً إذا لزم الأمر." <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td>[5]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. WHEN TO USE WHAT (conversational) -->
+  <section id="when" class="section">
+    <div class="kicker">3</div>
+    <h2>When to use what · متى نستخدم كل خيار؟</h2>
+    <table>
+      <thead>
+        <tr><th>Situation</th><th class="en">Recommendation (EN)</th><th class="ar">التوصية (AR)</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>You're launching a new campaign and want to learn what CPA is achievable</td>
+          <td class="en"><strong>Auto‑Bidding</strong> is perfect for the first 1–2 weeks. It will spend your budget and find the most efficient CPA in the current auction environment. After that, we can look at the average CPA and decide if we want to switch to Target Cost to lock it in. <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td class="ar"><strong>Auto‑Bidding</strong> مثالي للأسبوعين الأولين. سينفق ميزانيتك ويجد أكثر تكلفة اكتساب فعالة في بيئة المزاد الحالية. بعد ذلك، يمكننا النظر إلى متوسط تكلفة الاكتساب وتقرير ما إذا كنا نريد التحول إلى Target Cost لتثبيتها. <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td>Auto‑Bid maximises results and reveals the market rate. <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+        </tr>
+        <tr>
+          <td>You have a strict CPA goal (e.g., you need each purchase to cost less than $10)</td>
+          <td class="en"><strong>Target Cost</strong> is your friend. Set the target at or slightly below your goal (e.g., $9). Snapchat will work to keep the average around that level. Keep in mind that if the target is too aggressive, you might not get full delivery. <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar"><strong>Target Cost</strong> هو صديقك. حدد الهدف عند أو أقل بقليل من هدفك (مثلاً 9 دولارات). سيعمل سناب شات على الحفاظ على المتوسط حول هذا المستوى. ضع في اعتبارك أنه إذا كان الهدف صارماً جداً، فقد لا تحصل على إنفاق كامل. <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>Target Cost stabilises CPA, spend varies. <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+        </tr>
+        <tr>
+          <td>You want absolute control over the maximum bid, perhaps to limit risk</td>
+          <td class="en"><strong>Max Bid</strong> with the suggested range. Start near the top of the range to ensure your ads show, then you can gradually lower the bid to find the sweet spot between volume and cost. <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td class="ar"><strong>Max Bid</strong> مع النطاق المقترح. ابدأ قرب أعلى النطاق لضمان ظهور إعلاناتك، ثم يمكنك خفض العطاء تدريجياً لإيجاد النقطة المثلى بين الحجم والتكلفة. <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td>Max Bid caps cost per result, but too low = no delivery. <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+        </tr>
+        <tr>
+          <td>You're optimising for a lower‑funnel action like Purchase or Sign‑Up</td>
+          <td class="en">Expect a longer learning phase – up to 7 days or more. Make sure your budget is sufficient (at least 20–50 times your target CPA) and avoid making changes during this period. Auto‑Bidding is usually best initially to gather conversion data. <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a> <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td class="ar">توقع مرحلة تعلم أطول – حتى 7 أيام أو أكثر. تأكد من أن ميزانيتك كافية (على الأقل 20–50 ضعف تكلفة الاكتساب المستهدفة) وتجنب إجراء تغييرات خلال هذه الفترة. عادةً ما يكون Auto‑Bidding الأفضل في البداية لجمع بيانات التحويل. <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a> <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td>System needs conversion data to calibrate delivery. <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. WALKTHROUGH (conversational) -->
+  <section id="walkthrough" class="section">
+    <div class="kicker">4</div>
+    <h2>Walkthrough · How to set each bid type</h2>
+    <table>
+      <thead>
+        <tr><th>Bid Type</th><th class="en">Steps (EN)</th><th class="ar">الخطوات (AR)</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Auto‑Bidding</td>
+          <td class="en">"When you're in Ads Manager creating your campaign, after you set your objective and ad set details, look for the section called 'Bid & Goal'. Just select 'Auto‑Bidding'. That's it – you don't need to enter a bid amount. Snapchat will handle it dynamically." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td class="ar">"عند إنشاء حملتك في مدير الإعلانات، بعد تحديد الهدف وتفاصيل مجموعة الإعلانات، ابحث عن القسم المسمى 'Bid & Goal'. اختر 'Auto‑Bidding' فقط. هذا كل شيء – لا تحتاج إلى إدخال مبلغ عطاء. سيتولى سناب شات ذلك ديناميكياً." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td>[7][2]</td>
+        </tr>
+        <tr>
+          <td>Target Cost</td>
+          <td class="en">"In the same 'Bid & Goal' section, choose 'Target Cost'. Then enter your desired average cost per result – for example, if you want each purchase to average $10, type 10. Remember, Target Cost is available only for specific optimization goals like Clicks, App Installs, Shares, Story Opens, App Events, and most Pixel events." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar">"في نفس قسم 'Bid & Goal'، اختر 'Target Cost'. ثم أدخل متوسط التكلفة المطلوب لكل نتيجة – مثلاً، إذا كنت تريد أن يكون متوسط كل عملية شراء 10 دولارات، اكتب 10. تذكر أن Target Cost متاح فقط لأهداف تحسين محددة مثل النقرات، تثبيت التطبيق، المشاركات، فتح القصة، أحداث التطبيق، ومعظم أحداث البيكسل." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>[7][3]</td>
+        </tr>
+        <tr>
+          <td>Max Bid</td>
+          <td class="en">"Choose 'Max Bid' from the dropdown. You'll see a suggested bid range – this is based on real auction data. I recommend starting at the high end of that range to ensure your ads enter the auction. You can always lower it later. Enter your maximum bid in the box." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a> <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td class="ar">"اختر 'Max Bid' من القائمة المنسدلة. سترى نطاق عطاء مقترح – هذا بناءً على بيانات المزاد الفعلية. أوصي بالبدء عند الحد الأعلى لهذا النطاق لضمان دخول إعلاناتك في المزاد. يمكنك دائماً خفضه لاحقاً. أدخل الحد الأقصى لعطائك في المربع." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a> <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td>[7][5][4]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. LEARNING PHASE (conversational) -->
+  <section id="learning" class="section">
+    <div class="kicker">5</div>
+    <h2>The learning phase · مرحلة التعلّم</h2>
+    <table>
+      <thead>
+        <tr><th>Key points</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>What it is</td>
+          <td class="en">"Whenever you launch a new ad set or make significant changes, Snapchat enters a learning phase. During this time, our system is exploring different audiences, placements, and bid levels to figure out what works best. You might see higher CPAs or fewer conversions at first – that's normal." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td class="ar">"كلما أطلقت مجموعة إعلانات جديدة أو أجريت تغييرات كبيرة، يدخل سناب شات في مرحلة تعلّم. خلال هذا الوقت، يستكشف نظامنا جماهير ومواضع ومستويات عطاء مختلفة لمعرفة ما ينجح بشكل أفضل. قد ترى تكاليف اكتساب أعلى أو تحويلات أقل في البداية – هذا طبيعي." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td>[6]</td>
+        </tr>
+        <tr>
+          <td>Duration</td>
+          <td class="en">"Typically the learning phase lasts 1 to 7 days. It can take longer if your budget is low, your audience is narrow, or you're optimizing for a rare event like a purchase. The key is to give it enough time and not make frequent changes." <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td class="ar">"عادةً ما تستمر مرحلة التعلّم من 1 إلى 7 أيام. قد تستغرق وقتاً أطول إذا كانت ميزانيتك منخفضة، أو جمهورك ضيقاً، أو كنت تحسّن لحدث نادر مثل الشراء. المفتاح هو منحها الوقت الكافي وعدم إجراء تغييرات متكررة." <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a></td>
+          <td>[1]</td>
+        </tr>
+        <tr>
+          <td>How to exit faster</td>
+          <td class="en">"To help your campaign exit learning quickly, make sure your budget is high enough to get at least 20–50 conversions per week. Also, keep your audience size reasonably large – at least a few hundred thousand people. And avoid editing the ad set too often during the first week." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td class="ar">"لمساعدة حملتك على الخروج من التعلّم بسرعة، تأكد من أن ميزانيتك مرتفعة بما يكفي للحصول على 20–50 تحويلاً على الأقل في الأسبوع. أيضاً، حافظ على حجم جمهور معقول كبير – على الأقل بضع مئات الآلاف من الأشخاص. وتجنب تعديل مجموعة الإعلانات كثيراً خلال الأسبوع الأول." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td>[6]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. DECISION HELPER (conversational) -->
+  <section id="decision" class="section">
+    <div class="kicker">6</div>
+    <h2>Decision helper · دليلك لاختيار الاستراتيجية</h2>
+    <table>
+      <thead>
+        <tr><th>Primary goal</th><th class="en">Use this (EN)</th><th class="ar">استخدم هذا (AR)</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maximize delivery & learn fast</td>
+          <td class="en"><strong>Auto‑Bidding</strong> – it's the most aggressive at spending your budget and finding opportunities. <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td class="ar"><strong>Auto‑Bidding</strong> – الأكثر جرأة في إنفاق ميزانيتك واكتشاف الفرص. <a href="https://businesshelp.snapchat.com/s/article/auto-bidding?language=en_US" target="_blank">[2]</a></td>
+          <td>Least manual control</td>
+        </tr>
+        <tr>
+          <td>Hold CPA steady at target</td>
+          <td class="en"><strong>Target Cost</strong> – set it at the average CPA you saw during a successful Auto‑Bidding period, or at your business's break‑even CPA. <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar"><strong>Target Cost</strong> – حدده عند متوسط تكلفة الاكتساب الذي رأيته خلال فترة Auto‑Bidding ناجحة، أو عند تكلفة الاكتساب التي تحقق التعادل لنشاطك التجاري. <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>CPA stable, spend varies</td>
+        </tr>
+        <tr>
+          <td>Must cap bid price</td>
+          <td class="en"><strong>Max Bid</strong> + start at the high end of the suggested bid range. <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td class="ar"><strong>Max Bid</strong> + ابدأ عند الحد الأعلى للنطاق المقترح. <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a> <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a></td>
+          <td>Too low = limited delivery</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. TROUBLESHOOTING & PRO TIPS (conversational) -->
+  <section id="tips" class="section">
+    <div class="kicker">7</div>
+    <h2>Troubleshooting & pro tips · نصائح عملية</h2>
+    <table>
+      <thead>
+        <tr><th>Issue</th><th class="en">Fix (EN)</th><th class="ar">الحل (AR)</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Campaign not spending (Max Bid)</td>
+          <td class="en">"If you're using Max Bid and your campaign isn't spending, your bid is probably too low. Try raising it toward the high end of the suggested range. Also check that your audience isn't too narrow – if it's under 250,000, consider expanding." <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a> <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td class="ar">"إذا كنت تستخدم Max Bid وحملتك لا تنفق، فمن المحتمل أن عطاءك منخفض جداً. حاول رفعه نحو الحد الأعلى للنطاق المقترح. تحقق أيضاً من أن جمهورك ليس ضيقاً جداً – إذا كان أقل من 250,000، فكر في توسيعه." <a href="https://businesshelp.snapchat.com/s/article/suggested-bids" target="_blank">[5]</a> <a href="https://businesshelp.snapchat.com/s/article/max-bid?language=en_US" target="_blank">[4]</a></td>
+          <td>[5][4]</td>
+        </tr>
+        <tr>
+          <td>Target Cost not delivering full budget</td>
+          <td class="en">"Your target might be too ambitious. Try increasing the target by 10–20% and see if spend picks up. If it still doesn't, maybe the audience is too small or creative needs refreshing." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar">"قد يكون هدفك طموحاً جداً. جرب زيادة الهدف بنسبة 10–20% وانظر إذا زاد الإنفاق. إذا لم يزل، ربما الجمهور صغير جداً أو الإبداع بحاجة إلى تجديد." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>[3]</td>
+        </tr>
+        <tr>
+          <td>High CPA during first days</td>
+          <td class="en">"Don't panic – it's the learning phase. Avoid making changes for at least a week. Let the system gather data and stabilize. If after 7–10 days it's still high, we can revisit targeting or creative." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td class="ar">"لا داعي للذعر – إنها مرحلة التعلّم. تجنب إجراء تغييرات لمدة أسبوع على الأقل. دع النظام يجمع البيانات ويستقر. إذا بعد 7–10 أيام لا تزال مرتفعة، يمكننا إعادة النظر في الاستهداف أو الإبداع." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td>[6]</td>
+        </tr>
+        <tr>
+          <td>Which goals support Target Cost?</td>
+          <td class="en">"Target Cost is available for: Clicks, App Installs, Shares, Story Opens, App Events, and most Pixel events like Page View, Add to Cart, Purchase, Sign Up. If your goal isn't in that list, Auto‑Bidding or Max Bid are your options." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar">"Target Cost متاح لـ: النقرات، تثبيت التطبيق، المشاركات، فتح القصة، أحداث التطبيق، ومعظم أحداث البيكسل مثل مشاهدة الصفحة، إضافة إلى السلة، شراء، تسجيل. إذا لم يكن هدفك في هذه القائمة، فإن Auto‑Bidding أو Max Bid هما خياراك." <a href="https://businesshelp.snapchat.com/s/article/bid-amount?language=en_US" target="_blank">[7]</a> <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>[7][3]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. QUICK OBJECTIONS (conversational) -->
+  <section id="quick" class="section">
+    <div class="kicker">8</div>
+    <h2>Quick objections during the call</h2>
+    <table>
+      <thead>
+        <tr><th>Objection</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>“Why not just use Auto‑Bidding all the time?”</td>
+          <td class="en">"Great question. Auto‑Bidding is excellent for learning and maximising volume. But once you know your target CPA, Target Cost gives you more control over cost stability. And Max Bid lets you set a hard ceiling if you're worried about bid spikes. It's about matching the strategy to your stage and goal."</td>
+          <td class="ar">"سؤال رائع. Auto‑Bidding ممتاز للتعلّم وتعظيم الحجم. لكن بمجرد معرفة تكلفة الاكتساب المستهدفة، يمنحك Target Cost تحكماً أكبر في استقرار التكلفة. وMax Bid يتيح لك وضع سقف صارم إذا كنت قلقاً من ارتفاعات العطاءات. الأمر يتعلق بمواءمة الاستراتيجية مع مرحلتك وهدفك."</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>“I set a Target Cost but my CPA is still above it.”</td>
+          <td class="en">"If you're still in the first week, that's the learning phase – give it more time. If it's been longer, the target might be too low for the current auction environment. We could either increase the target slightly or try Auto‑Bidding for a week to see what's achievable." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td class="ar">"إذا كنت لا تزال في الأسبوع الأول، فهذه مرحلة التعلّم – أعطها مزيداً من الوقت. إذا مضى وقت أطول، قد يكون الهدف منخفضاً جداً لبيئة المزاد الحالية. يمكننا إما زيادة الهدف قليلاً أو تجربة Auto‑Bidding لمدة أسبوع لنرى ما يمكن تحقيقه." <a href="https://businesshelp.snapchat.com/s/article/target-cost?language=en_US&useContentAccordionItems=px5w6&lang=en-US" target="_blank">[3]</a></td>
+          <td>[3]</td>
+        </tr>
+        <tr>
+          <td>“Can I switch bid strategies mid‑campaign?”</td>
+          <td class="en">"Yes, you can edit an ad set and change the bid strategy. But be aware that any significant change will put the ad set back into the learning phase. So it's best to make a decision, then give it time to stabilise." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td class="ar">"نعم، يمكنك تعديل مجموعة إعلانية وتغيير استراتيجية المزايدة. لكن كن على علم أن أي تغيير كبير سيعيد المجموعة إلى مرحلة التعلّم. لذا من الأفضل اتخاذ قرار، ثم منحه الوقت للاستقرار." <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a></td>
+          <td>[6]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="notice small">
+    <strong>Reminder:</strong> All new or changed ad sets pass through a <strong>Learning Phase</strong>; keep budgets realistic and avoid frequent edits for the first few days. <a href="https://businesshelp.snapchat.com/s/article/exploration-phase?language=en_US" target="_blank">[6]</a> <a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">[1]</a>
+  </div>
+
+  <!-- BUSINESS HELP CENTER LINKS -->
+  <section class="section resource-section" style="margin-top: 40px;">
+    <div class="kicker">Support</div>
+    <h2>Business Help Center</h2>
+    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Relevant resources from Snapchat's official Business Help Center</p>
+    <ul class="resource-list">
+      <li><a href="https://businesshelp.snapchat.com/s/article/bidding-strategies?language=en_US" target="_blank">Bidding Strategies Overview</a> – Understand automatic vs. manual bidding and optimization goals</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/campaign-optimization?language=en_US" target="_blank">Campaign Optimization Guide</a> – Best practices for maximizing ROI and lowering CPA</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/learning-phase?language=en_US" target="_blank">Understanding the Learning Phase</a> – How new campaigns gather data and optimize</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/pacing-optimization?language=en_US" target="_blank">Pacing & Budget Optimization</a> – Control spend velocity and daily delivery</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/auction-dynamics?language=en_US" target="_blank">Snapchat Auction Mechanics</a> – How bids, quality, and context interact</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/campaign-performance?language=en_US" target="_blank">Campaign Performance Reports</a> – Measure results and ROI of bidding decisions</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

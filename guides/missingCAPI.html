@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Snapchat Strategist · Conversion API (CAPI) Implementation (EN/AR)</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<header>
+  <h1>Snapchat Strategist · Conversion API (CAPI) Setup (EN/AR)</h1>
+  <div class="meta">Server-side tracking implementation · From decision to deployment</div>
+</header>
+
+<div class="wrap">
+  <div class="notice">
+    <strong>✔ Purpose:</strong> Guide a meeting to implement Conversion API (CAPI) for server-side tracking. Covers benefits (15%+ event quality improvement), integration methods, setup best practices, and next steps. All scripts are bilingual (EN/AR).
+  </div>
+
+  <section id="legend" class="legend">
+    <div class="kicker">Legend</div>
+    <h2>How to Navigate</h2>
+    <table>
+      <thead><tr><th>Element</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip">Go to →</span></td><td class="muted">Click to jump to referenced section.</td></tr>
+        <tr><td><span class="chip ok">Aligned</span> / <span class="chip warn">Objection</span></td><td class="muted">Branch based on customer response.</td></tr>
+        <tr><td>EN / AR cells</td><td class="muted">Scripts you can read verbatim or adapt.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="toc" class="toc">
+    <div class="kicker">Navigation</div>
+    <h2>Meeting stages</h2>
+    <div class="grid">
+      <div>
+        <ul>
+          <li><a href="#opening">1. Opening & opportunity</a></li>
+          <li><a href="#why_capi">2. Why CAPI matters</a></li>
+          <li><a href="#methods">3. Integration methods</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#implementation">4. Implementation plan</a></li>
+          <li><a href="#testing">5. Testing & validation</a></li>
+          <li><a href="#next_steps">6. Next steps</a></li>
+          <li><a href="#objections">7. Objections</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="opening" class="section">
+    <div class="kicker">1</div>
+    <h2>Opening & opportunity</h2>
+    <table>
+      <thead>
+        <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Recognition</td>
+          <td class="en">"I noticed you're currently tracking conversions only through the Snap Pixel on your website. That's a solid start, but you're missing about 15-20% of conversions that happen server-side or in environments the pixel can't reach. Conversion API addresses exactly that."</td>
+          <td class="ar">"لاحظت أنك حالياً تتتبع التحويلات فقط من خلال بكسل سناب على موقعك. هذا بداية قوية، لكنك تفتقد حوالي 15-20٪ من التحويلات التي تحدث من جانب الخادم أو في بيئات لا يمكن للبكسل الوصول إليها. واجهة التحويل API تعالج هذا بالضبط."</td>
+          <td><a href="#why_capi">Go to → Why CAPI</a></td>
+        </tr>
+        <tr>
+          <td>Benefit summary</td>
+          <td class="en">"CAPI lets you send conversion data directly from your server to Snapchat. This means more accurate tracking, better EventQuality Scores, and campaigns that optimize faster. We'll set it up, test it thoroughly, and start seeing improvements within days."</td>
+          <td class="ar">"واجهة التحويل API تتيح لك إرسال بيانات التحويل مباشرة من خادمك إلى سناب شات. هذا يعني تتبعاً أكثر دقة، وعلامات جودة أحداث أفضل، وحملات تتحسن بسرعة أكبر. سنقوم بإعدادها، واختبارها بشكل شامل، وتبدأ في رؤية التحسينات خلال أيام."</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="why_capi" class="section">
+    <div class="kicker">2</div>
+    <h2>Why CAPI matters</h2>
+    <table>
+      <thead>
+        <tr><th>Benefit</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Better accuracy</td>
+          <td class="en">Pixel requires JavaScript and cookies - both can be blocked. CAPI uses your server, so no blockers. This means you capture 15%+ more conversions.</td>
+          <td class="ar">البكسل يتطلب JavaScript والكوكيز - كلاهما يمكن حجبه. واجهة التحويل API تستخدم خادمك، لذا لا توجد عقبات. هذا يعني أنك تلتقط 15٪ أو أكثر من التحويلات الإضافية.</td>
+        </tr>
+        <tr>
+          <td>Higher EQS</td>
+          <td class="en">Event Quality Score improves because you're sending cleaner, first-party data. This signals credibility to Snapchat's algorithm. Higher EQS = better optimization.</td>
+          <td class="ar">علامة جودة الأحداث تتحسن لأنك تُرسل بيانات من الطرف الأول أنظف. هذا يشير إلى المصداقية للخوارزمية. EQS أعلى = تحسين أفضل.</td>
+        </tr>
+        <tr>
+          <td>Faster learning</td>
+          <td class="en">Snapchat's algorithm learns from reliable data faster. This shortens the Learning Phase and reduces your cost per acquisition.</td>
+          <td class="ar">تتعلم خوارزمية سناب شات من البيانات الموثوقة بسرعة أكبر. هذا يقصر مرحلة التعلم ويقلل تكلفة اكتساب العملاء.</td>
+        </tr>
+        <tr>
+          <td>Cross-device tracking</td>
+          <td class="en">CAPI lets you match users across devices (mobile app, web desktop, etc) with Snapchat IDs. Pixel alone can't do this.</td>
+          <td class="ar">واجهة التحويل API تتيح لك مطابقة المستخدمين عبر الأجهزة (تطبيق الهاتف المحمول، سطح المكتب ويب، وما إلى ذلك) مع معرّفات سناب شات. البكسل وحده لا يمكنه القيام بهذا.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="methods" class="section">
+    <div class="kicker">3</div>
+    <h2>Integration methods</h2>
+    <table>
+      <thead>
+        <tr><th>Method</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Best for</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Direct API</td>
+          <td class="en">Your engineering team builds a custom integration to send events directly to Snapchat via CAPI endpoints.</td>
+          <td class="ar">فريق الهندسة الخاص بك يبني تكاملاً مخصصاً لإرسال الأحداث مباشرة إلى سناب شات عبر نقاط نهاية واجهة التحويل API.</td>
+          <td>High-traffic sites with engineering resources</td>
+        </tr>
+        <tr>
+          <td>Shopify app</td>
+          <td class="en">If you're on Shopify, install the Snapchat app and configure CAPI in minutes – no code required.</td>
+          <td class="ar">إذا كنت على Shopify، قم بتثبيت تطبيق سناب شات وقم بتكوين واجهة التحويل API في دقائق – لا يوجد كود مطلوب.</td>
+          <td>Shopify sites</td>
+        </tr>
+        <tr>
+          <td>Partner integration</td>
+          <td class="en">Use a Snapchat-certified partner like Segment, Klaviyo, or Taboola to forward events. Setup is faster than building yourself.</td>
+          <td class="ar">استخدم شريكاً معتمداً من سناب شات مثل Segment أو Klaviyo أو Taboola لإعادة توجيه الأحداث. الإعداد أسرع من البناء بنفسك.</td>
+          <td>Multi-channel marketing</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="implementation" class="section">
+    <div class="kicker">4</div>
+    <h2>Implementation plan</h2>
+    <table>
+      <thead>
+        <tr><th>Phase</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Setup</td>
+          <td class="en">Generate CAPI token in Ads Manager, share access, begin integration.</td>
+          <td class="ar">توليد رمز واجهة التحويل API في Ads Manager، ومشاركة الوصول، وبدء التكامل.</td>
+          <td>Day 1</td>
+        </tr>
+        <tr>
+          <td>Mapping</td>
+          <td class="en">Map your conversion events (purchase, sign-up, add-to-cart) to Snapchat standard events.</td>
+          <td class="ar">ربط أحداث التحويل الخاصة بك (الشراء، التسجيل، إضافة إلى السلة) بأحداث سناب شات القياسية.</td>
+          <td>Days 2–3</td>
+        </tr>
+        <tr>
+          <td>Testing</td>
+          <td class="en">Send test conversions, validate in Ads Manager, check for errors.</td>
+          <td class="ar">إرسال تحويلات تجريبية، التحقق من صحتها في Ads Manager، التحقق من الأخطاء.</td>
+          <td>Day 4</td>
+        </tr>
+        <tr>
+          <td>Launch</td>
+          <td class="en">Enable in Ads Manager, monitor for 24 hours, confirm events flowing correctly.</td>
+          <td class="ar">تفعيل في Ads Manager، مراقبة لمدة 24 ساعة، تأكيد تدفق الأحداث بشكل صحيح.</td>
+          <td>Day 5</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="testing" class="section">
+    <div class="kicker">5</div>
+    <h2>Testing & validation</h2>
+    <table>
+      <thead>
+        <tr><th>Test</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Event verification</td>
+          <td class="en">Check Ads Manager's "Conversions" report. Events should appear within 5–15 minutes of being sent.</td>
+          <td class="ar">تحقق من تقرير "التحويلات" في Ads Manager. يجب أن تظهر الأحداث في غضون 5-15 دقيقة من إرسالها.</td>
+        </tr>
+        <tr>
+          <td>Data validation</td>
+          <td class="en">Confirm that event values, currency, and user hashing are correct. Mismatches hurt EQS.</td>
+          <td class="ar">تأكد من أن قيم الأحداث والعملة وتجزئة المستخدم صحيحة. عدم المطابقة يضر EQS.</td>
+        </tr>
+        <tr>
+          <td>Deduplication</td>
+          <td class="en">If you're running Pixel + CAPI together, enable deduplication to avoid double-counting conversions.</td>
+          <td class="ar">إذا كنت تشغل Pixel + CAPI معاً، فعّل إزالة التكرار لتجنب عد التحويلات مرتين.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="next_steps" class="section">
+    <div class="kicker">6</div>
+    <h2>Next steps</h2>
+    <table>
+      <thead>
+        <tr><th>Action</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Create CAPI token</td>
+          <td class="en">In Ads Manager > Events > CAPI, generate a token and share with your engineering team.</td>
+          <td class="ar">في Ads Manager > Events > CAPI، قم بإنشاء رمز ومشاركته مع فريق الهندسة.</td>
+          <td>You (in Ads Manager)</td>
+        </tr>
+        <tr>
+          <td>Brief engineering</td>
+          <td class="en">Share the CAPI setup guide and confirm which events will be sent (purchase, sign-up, etc).</td>
+          <td class="ar">شارك دليل إعداد واجهة التحويل API وأكد أي الأحداث سيتم إرسالها (الشراء، التسجيل، وما إلى ذلك).</td>
+          <td>You + Engineering</td>
+        </tr>
+        <tr>
+          <td>Set up monitoring</td>
+          <td class="en">Create a dashboard to monitor CAPI event flow daily. If events drop, troubleshoot immediately.</td>
+          <td class="ar">أنشئ لوحة تحكم للمراقبة اليومية لتدفق أحداث واجهة التحويل API. إذا توقفت الأحداث، قم بحل المشكلة على الفور.</td>
+          <td>You / Engineering</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="objections" class="section">
+    <div class="kicker">7</div>
+    <h2>Objections</h2>
+    <table>
+      <thead>
+        <tr><th>Objection</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"We don't have developer resources"</td>
+          <td class="en">"No problem. If you're on Shopify, we can set it up without code. If you're on another platform, we can recommend a Snapchat-certified partner like Segment or Taboola – they handle the integration for you."</td>
+          <td class="ar">"لا مشكلة. إذا كنت على Shopify، يمكننا إعدادها بدون كود. إذا كنت على منصة أخرى، يمكننا التوصية بشريك معتمد من سناب شات مثل Segment أو Taboola – هم يتولون التكامل نيابة عنك."</td>
+          <td><a href="#methods">Explore partner options</a></td>
+        </tr>
+        <tr>
+          <td>"We're already happy with Pixel"</td>
+          <td class="en">"Pixel is great for baseline tracking, but CAPI captures what Pixel misses – about 15-20% of conversions. Together they're more powerful than either alone. You don't need to choose; you can run both."</td>
+          <td class="ar">"البكسل رائع للتتبع الأساسي، لكن واجهة التحويل API تلتقط ما يفتقده البكسل – حوالي 15-20٪ من التحويلات. معاً فهما أقوى مما هو عليه أي منهما وحده. لا تحتاج إلى الاختيار؛ يمكنك تشغيل كليهما."</td>
+          <td><a href="#testing">Review deduplication</a></td>
+        </tr>
+        <tr>
+          <td>"What about user privacy?"</td>
+          <td class="en">"Great question. CAPI is designed with privacy in mind. You hash sensitive data (emails, phone) on your server before sending, so Snapchat never sees raw PII. It's fully compliant with GDPR, CCPA, and other privacy laws."</td>
+          <td class="ar">"سؤال رائع. تم تصميم واجهة التحويل API مع مراعاة الخصوصية. تقوم بتجزئة البيانات الحساسة (رسائل البريد الإلكتروني والهاتف) على خادمك قبل الإرسال، لذا لا ترى سناب شات أبداً بيانات الهوية الشخصية الخام. إنها متوافقة بالكامل مع GDPR و CCPA وقوانين الخصوصية الأخرى."</td>
+          <td><a href="#testing">Review data validation</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footnote">
+    Replace placeholders with actual customer data. Use the branch links to navigate objections. This flow is designed to be technical but accessible to non-developers.
+  </div>
+
+  <!-- BUSINESS HELP CENTER LINKS -->
+  <section class="section resource-section" style="margin-top: 40px;">
+    <div class="kicker">Support</div>
+    <h2>Business Help Center</h2>
+    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Relevant resources from Snapchat's official Business Help Center</p>
+    <ul class="resource-list">
+      <li><a href="https://businesshelp.snapchat.com/s/article/conversion-api?language=en_US" target="_blank">Conversion API (CAPI) Overview</a> – Setup guide and integration methods</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/capi-setup-guide?language=en_US" target="_blank">CAPI Implementation Guide</a> – Step-by-step technical setup</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/capi-testing?language=en_US" target="_blank">Testing CAPI Events</a> – Validate your implementation</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/capi-deduplication?language=en_US" target="_blank">CAPI + Pixel Deduplication</a> – Avoid double-counting conversions</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/event-quality-score?language=en_US" target="_blank">Improving Event Quality Score</a> – CAPI's role in EQS improvement</li>
+      <li><a href="https://developers.snap.com/docs/marketing-api/capi/introduction" target="_blank">Snapchat Developers – CAPI Docs</a> – Technical reference (external)</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

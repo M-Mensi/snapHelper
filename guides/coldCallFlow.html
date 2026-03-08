@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snapchat Strategist · Expert call flow (EN/AR) + deep‑dive tables</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Snapchat Account Strategist · Expert call flow (EN/AR) + deep‑dive tables</h1>
+    <div class="meta">Official employee · data‑driven insights · meeting booking focus</div>
+  </header>
+
+  <div class="wrap">
+    <div class="notice">
+      <strong>✔ You already have account data:</strong> pixel status, event quality, creative performance, budget utilization, etc. Use personalized insights to build credibility. The goal is to book a meeting to implement solutions. Tables are interlinked for non‑linear objection handling. <em>New:</em> added "audience too narrow", "ad format not best", "bidding strategy irrelevant", plus deep‑dive info tables for every opportunity.
+    </div>
+
+    <!-- Legend & TOC (same as theme) -->
+    <section id="legend" class="legend">
+      <div class="kicker">Legend</div>
+      <h2>How to Navigate</h2>
+      <table>
+        <thead><tr><th>Element</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip">Go to →</span></td><td class="muted">Click to jump to referenced table.</td></tr>
+          <tr><td><span class="chip ok">Yes/Interested</span> / <span class="chip no">No/Busy</span></td><td class="muted">Branch outcomes based on response.</td></tr>
+          <tr><td>EN / AR cells</td><td class="muted">Placeholders – replace with actual scripts.</td></tr>
+          <tr><td>Placeholders</td><td class="muted"><code>{{Customer_Name}}</code>, <code>{{Meeting_Link}}</code>, <code>{{Stat}}</code> etc.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="toc" class="toc">
+      <div class="kicker">Navigation</div>
+      <h2>Table of Contents</h2>
+      <div class="grid">
+        <div>
+          <ul>
+            <li><a href="#intro">1. Intro & decision‑maker check</a></li>
+            <li><a href="#personalized_insight">2. Personalized insight (account data)</a></li>
+            <li><a href="#meeting_proposal">3. Meeting proposal & booking link</a></li>
+            <li><a href="#objection_not_responsible">4. Objection: Not responsible</a></li>
+            <li><a href="#objection_no_time">5. Objection: No time / busy</a></li>
+            <li><a href="#objection_not_interested">6. Objection: Not interested / happy</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#objection_agency">7. Objection: Already have agency</a></li>
+            <li><a href="#objection_budget">8. Objection: Budget concerns</a></li>
+            <li><a href="#objection_tech">9. Objection: Technical / privacy</a></li>
+            <li><a href="#objection_check_team">10. Objection: Need to check with team</a></li>
+            <li><a href="#objection_email_only">11. Objection: Just email me</a></li>
+            <li><a href="#voicemail_followup">12. Voicemail & follow‑up email</a></li>
+            <li><a href="#closing">13. Closing & next steps</a></li>
+            <li><a href="#deepdive_section">14. Opportunity deep‑dive info tables</a></li>
+            <li><a href="#quick_ref">15. Quick reference: objections & opportunities</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1. INTRO & DECISION‑MAKER CHECK ========= (unchanged) -->
+    <section id="intro" class="section">
+      <div class="kicker">1</div>
+      <h2>Intro & verification (responsible for ads)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Node</th>
+            <th>Intent</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Branching</th>
+            <th>References</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.1</td>
+            <td>Opening (use name, show you're official Snapchat)</td>
+            <td class="en">"Hi {{Customer_Name}}, this is {{Strategist_Name}} calling from Snapchat – I'm your dedicated Account Strategist. I’ve been reviewing your account and have some specific observations to help improve your campaign performance. Am I speaking with the person responsible for your Snapchat ads?"</td>
+            <td class="ar">"مرحباً {{Customer_Name}}، معك {{Strategist_Name}} من سناب شات – أنا مستشار حسابك المخصص. اطلعت على حسابك ولدي بعض الملاحظات المحددة لمساعدتك في تحسين أداء الحملات. هل أتحدث مع الشخص المسؤول عن إعلانات سناب شات؟"</td>
+            <td>
+              <div><span class="chip ok">Yes, responsible</span> <a href="#personalized_insight">Go to → Personalized insight</a></div>
+              <div><span class="chip no">No (gatekeeper)</span> <a href="#objection_not_responsible">Go to → Not responsible</a></div>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 2. PERSONALIZED INSIGHT (with three new rows + links to deep‑dive) ========= -->
+    <section id="personalized_insight" class="section">
+      <div class="kicker">2</div>
+      <h2>Personalized insight (data you already know)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Issue / Opportunity</th>
+            <th class="en">English (EN) – insert specific stat</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Branching</th>
+            <th>Ref (info)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pixel not firing / missing</strong></td>
+            <td class="en">"I noticed your Snap Pixel isn't tracking purchases correctly – it's currently capturing only about 30% of conversions. That means you're missing out on optimization data and your campaigns can't fully optimize for sales."</td>
+            <td class="ar">"لاحظت أن بكسل سناب شات لا يتتبع عمليات الشراء بشكل صحيح – إنه يلتقط فقط حوالي ٣٠٪ من التحويلات. هذا يعني أنك تفقد بيانات تحسين الحملات ولا تستطيع الحملات تحسين المبيعات بالكامل."</td>
+            <td><a href="#meeting_proposal">Propose meeting to fix pixel</a></td>
+            <td><a href="#info_pixel">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Low event quality score</strong></td>
+            <td class="en">"Your event quality score for purchase events is currently 4/10 – that's below Snap's benchmark. This limits delivery and increases cost per result. We need to improve the way events are set up."</td>
+            <td class="ar">"جودة حدث الشراء لديك حاليًا ٤/١٠ – وهذا أقل من معيار سناب. هذا يحد من وصول الحملات ويزيد التكلفة لكل نتيجة. نحتاج لتحسين طريقة إعداد الأحداث."</td>
+            <td><a href="#meeting_proposal">Propose event quality fix</a></td>
+            <td><a href="#info_event_quality">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Creative fatigue / low CTR</strong></td>
+            <td class="en">"Your main ad set has been running the same creatives for 6 weeks, and CTR dropped from 1.2% to 0.6%. Fresh creative could bring back performance."</td>
+            <td class="ar">"مجموعتك الإعلانية الرئيسية تستخدم نفس الإبداعات منذ ٦ أسابيع، وانخفضت نسبة النقر من ١.٢٪ إلى ٠.٦٪. إبداعات جديدة يمكن أن تعيد الأداء."</td>
+            <td><a href="#meeting_proposal">Propose creative consultation</a></td>
+            <td><a href="#info_creative">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Budget inefficiency / bidding</strong></td>
+            <td class="en">"I see you're using automatic bidding, but with your budget, a target cost bid might lower your CPA. We've seen similar businesses reduce CPA by 20% after switching."</td>
+            <td class="ar">"أرى أنك تستخدم العطاءات التلقائية، ولكن مع ميزانيتك، قد يؤدي عطاء التكلفة المستهدفة إلى خفض تكلفة التحويل. لقد رأينا شركات مشابهة تخفض التكلفة بنسبة ٢٠٪ بعد التغيير."</td>
+            <td><a href="#meeting_proposal">Propose bidding strategy session</a></td>
+            <td><a href="#info_budget_bidding">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Missing Conversion API (CAPI)</strong></td>
+            <td class="en">"You haven't set up Conversion API yet. It's essential for reliable tracking and can improve event quality by up to 15%. I can help you integrate it."</td>
+            <td class="ar">"لم تقم بإعداد واجهة برمجة تطبيقات التحويل بعد. إنها ضرورية للتتبع الموثوق ويمكن أن تحسن جودة الأحداث بنسبة تصل إلى ١٥٪. يمكنني مساعدتك في دمجها."</td>
+            <td><a href="#meeting_proposal">Propose CAPI setup</a></td>
+            <td><a href="#info_capi">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Campaign objective misalignment</strong></td>
+            <td class="en">"Your campaign is set to 'Awareness' but your goal is sales. Changing to 'Conversions' would align your optimization with your KPI."</td>
+            <td class="ar">"حملتك مضبوطة على 'الوعي' ولكن هدفك هو المبيعات. تغييرها إلى 'التحويلات' سيجعل التحسين متوافقًا مع مؤشر الأداء."</td>
+            <td><a href="#meeting_proposal">Propose objective realignment</a></td>
+            <td><a href="#info_objective">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Audience / targeting too broad</strong></td>
+            <td class="en">"Your audience is currently 10M users – that's very broad. We could layer interests or create a lookalike from your customer list to improve efficiency."</td>
+            <td class="ar">"جمهورك الحالي ١٠ ملايين مستخدم – واسع جدًا. يمكننا إضافة اهتمامات أو إنشاء جمهور مشابه من قائمة عملائك لتحسين الكفاءة."</td>
+            <td><a href="#meeting_proposal">Propose audience refinement</a></td>
+            <td><a href="#info_audience_broad">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Attachments (deep links / product sets)</strong></td>
+            <td class="en">"You're not using attachments like deep links or product sets in your ads – that can boost conversion rates by making the post‑click experience smoother."</td>
+            <td class="ar">"أنت لا تستخدم المرفقات مثل الروابط العميقة أو مجموعات المنتجات في إعلاناتك – يمكن أن يعزز معدلات التحويل بجعل تجربة ما بعد النقر أكثر سلاسة."</td>
+            <td><a href="#meeting_proposal">Propose attachments workshop</a></td>
+            <td><a href="#info_attachments">ℹ️ more</a></td>
+          </tr>
+          <!-- NEW ROWS (audience too narrow, ad format, bidding strategy irrelevant) -->
+          <tr>
+            <td><strong>Audience too narrow</strong></td>
+            <td class="en">"Your audience size is only 500k – that's quite narrow. This can limit scale and lead to frequency issues. We could expand by using broader interests or lookalikes."</td>
+            <td class="ar">"جمهورك صغير جدًا – ٥٠٠ ألف فقط. هذا قد يحد من الوصول ويؤدي لمشاكل في التكرار. يمكننا التوسع باستخدام اهتمامات أوسع أو جماهير مشابهة."</td>
+            <td><a href="#meeting_proposal">Propose audience expansion</a></td>
+            <td><a href="#info_audience_narrow">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Ad format not optimal</strong></td>
+            <td class="en">"I noticed you're primarily using single image ads. For Snapchat, video ads typically drive higher engagement and conversions. We could test different formats like story ads or collection ads."</td>
+            <td class="ar">"لاحظت أنك تستخدم بشكل أساسي إعلانات الصور المفردة. على سناب شات، إعلانات الفيديو عادةً تحقق تفاعلاً وتحويلات أعلى. يمكننا اختبار صيغ مختلفة مثل إعلانات القصص أو المجموعات."</td>
+            <td><a href="#meeting_proposal">Propose creative format test</a></td>
+            <td><a href="#info_ad_format">ℹ️ more</a></td>
+          </tr>
+          <tr>
+            <td><strong>Bidding strategy irrelevant</strong></td>
+            <td class="en">"Your bidding strategy is set to 'lowest cost', but with your conversion goal, 'target cost' might give you more control and stability. Let's review which one aligns with your KPI."</td>
+            <td class="ar">"إستراتيجية العطاءات لديك مضبوطة على 'أقل تكلفة'، ولكن مع هدف التحويل الخاص بك، 'التكلفة المستهدفة' قد تمنحك تحكماً واستقراراً أكبر. دعنا نراجع أيهما يتوافق مع مؤشر الأداء."</td>
+            <td><a href="#meeting_proposal">Propose bidding review</a></td>
+            <td><a href="#info_bidding_irrelevant">ℹ️ more</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 3. MEETING PROPOSAL (unchanged) ========= -->
+    <section id="meeting_proposal" class="section">
+      <div class="kicker">3</div>
+      <h2>Meeting proposal & booking link</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Node</th>
+            <th>Intent</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Branching</th>
+            <th>References</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3.1</td>
+            <td>Propose a short strategy session</td>
+            <td class="en">"I'd like to schedule a 15‑minute call to walk you through the fix and show you exactly how we can improve performance. I'll share specific recommendations. Can I send you a link to book a time that works for you?"</td>
+            <td class="ar">"أود تحديد مكالمة لمدة ١٥ دقيقة لأشرح لك كيفية الإصلاح وأريك بالضبط كيف يمكننا تحسين الأداء. سأشارك توصيات محددة. هل يمكنني إرسال رابط لحجز وقت يناسبك؟"</td>
+            <td>
+              <div><span class="chip ok">Yes / send link</span> <a href="#closing">Go to → Closing (send link)</a></div>
+              <div><span class="chip no">No / not now</span> → objection handling</div>
+              <div><span class="chip warn">Objection</span> <a href="#objection_no_time">No time</a> • <a href="#objection_not_interested">Not interested</a> • <a href="#objection_budget">Budget</a> etc.</div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3.2</td>
+            <td>If customer prefers a specific time</td>
+            <td class="en">"Sure, let's lock in [day/time]. I'll send a calendar invite."</td>
+            <td class="ar">"بالتأكيد، لنحدد [اليوم/الوقت]. سأرسل دعوة تقويم."</td>
+            <td><a href="#closing">Closing</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 4. Not responsible (unchanged) ========= -->
+    <section id="objection_not_responsible" class="section">
+      <div class="kicker">4</div>
+      <h2>Objection: Not the right person</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ask for referral</td>
+            <td class="en">"Could you please direct me to the person who manages your Snapchat ads? I have some insights that could really help."</td>
+            <td class="ar">"هل يمكنك توجيهي إلى الشخص الذي يدير إعلانات سناب شات؟ لدي بعض الأفكار التي يمكن أن تساعد حقاً."</td>
+            <td><a href="#intro">Back to intro with new contact</a></td>
+          </tr>
+          <tr>
+            <td>Leave info</td>
+            <td class="en">"I'll send an email with my findings and a meeting link – feel free to forward it to the right person."</td>
+            <td class="ar">"سأرسل بريداً إلكترونياً بما وجدته ورابط الاجتماع – يمكنك توجيهه للشخص المعني."</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 5. No time (unchanged) ========= -->
+    <section id="objection_no_time" class="section">
+      <div class="kicker">5</div>
+      <h2>Objection: No time / busy</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Offer short call</td>
+            <td class="en">"I completely understand. Would a 10‑minute call next week work? I'll be very concise and focus on the key opportunity I spotted."</td>
+            <td class="ar">"أتفهم تماماً. هل تصلح مكالمة لمدة ١٠ دقائق الأسبوع القادم؟ سأكون مختصراً وسأركز على الفرصة الرئيسية التي لاحظتها."</td>
+            <td><a href="#meeting_proposal">Re‑propose meeting</a></td>
+          </tr>
+          <tr>
+            <td>Send email + link</td>
+            <td class="en">"No problem. I'll email you a summary of what I found along with a link to book a quick call whenever you have a moment."</td>
+            <td class="ar">"لا مشكلة. سأرسل لك ملخصاً لما وجدته عبر البريد مع رابط لحجز مكالمة سريعة عندما يتسنى لك الوقت."</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 6. Not interested (unchanged) ========= -->
+    <section id="objection_not_interested" class="section">
+      <div class="kicker">6</div>
+      <h2>Objection: Not interested / happy with current</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Probe with data</td>
+            <td class="en">"I understand. Just so you know, I'm seeing an opportunity to potentially lower your CPA by 20% based on similar businesses. Would you be open to a 10‑minute chat to validate that?"</td>
+            <td class="ar">"أتفهم. فقط لكي تعلم، أرى فرصة لخفض تكلفة التحويل بنسبة ٢٠٪ بناءً على أعمال مشابهة. هل ترغب في مكالمة لمدة ١٠ دقائق للتحقق من ذلك؟"</td>
+            <td><a href="#meeting_proposal">Re‑propose</a></td>
+          </tr>
+          <tr>
+            <td>Respectful exit</td>
+            <td class="en">"No worries. I'll send you a quick email with my observations in case you change your mind later."</td>
+            <td class="ar">"لا مشكلة. سأرسل لك بريداً سريعاً بملاحظاتي في حال غيرت رأيك لاحقاً."</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 7. Agency (unchanged) ========= -->
+    <section id="objection_agency" class="section">
+      <div class="kicker">7</div>
+      <h2>Objection: Already have an agency</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Joint call</td>
+            <td class="en">"Great! I can join a quick call with your agency to share platform updates and best practices – it's always helpful to have the full team aligned."</td>
+            <td class="ar">"ممتاز! يمكنني الانضمام إلى مكالمة سريعة مع وكالتكم لمشاركة تحديثات المنصة وأفضل الممارسات – من المفيد دائمًا أن يكون الفريق بأكمله منسقاً."</td>
+            <td><a href="#meeting_proposal">Propose joint meeting</a></td>
+          </tr>
+          <tr>
+            <td>Send resources</td>
+            <td class="en">"I can send you some benchmarks and optimization tips that your agency might find useful. Would that be helpful?"</td>
+            <td class="ar">"يمكنني إرسال بعض المؤشرات ونصائح التحسين التي قد تفيد وكالتكم. هل سيكون ذلك مفيداً؟"</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 8. Budget (unchanged) ========= -->
+    <section id="objection_budget" class="section">
+      <div class="kicker">8</div>
+      <h2>Objection: Budget constraints</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Efficiency angle</td>
+            <td class="en">"My recommendations actually focus on improving efficiency – you may be able to get better results with the same budget, or even reduce wasted spend. Let's discuss in a short call."</td>
+            <td class="ar">"توصياتي تركز في الواقع على تحسين الكفاءة – قد تتمكن من الحصول على نتائج أفضل بنفس الميزانية، أو حتى تقليل الإنفاق الضائع. دعنا نناقش في مكالمة قصيرة."</td>
+            <td><a href="#meeting_proposal">Propose meeting</a></td>
+          </tr>
+          <tr>
+            <td>Start small</td>
+            <td class="en">"We can start with a small test budget to validate improvements before scaling. It's low risk."</td>
+            <td class="ar">"يمكننا البدء بميزانية اختبار صغيرة للتحقق من التحسينات قبل التوسع. المخاطرة منخفضة."</td>
+            <td><a href="#meeting_proposal">Propose meeting</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 9. Tech / privacy (unchanged) ========= -->
+    <section id="objection_tech" class="section">
+      <div class="kicker">9</div>
+      <h2>Objection: Technical / privacy concerns</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Assure compliance</td>
+            <td class="en">"Snapchat follows strict privacy standards. We can also set up server‑side tracking (Conversion API) which is more secure and doesn't rely on cookies."</td>
+            <td class="ar">"سناب شات يلتزم بمعايير خصوصية صارمة. يمكننا أيضًا إعداد تتبع من جهة الخادم (واجهة التحويل) وهو أكثر أماناً ولا يعتمد على ملفات تعريف الارتباط."</td>
+            <td><a href="#meeting_proposal">Propose tech session</a></td>
+          </tr>
+          <tr>
+            <td>Offer documentation</td>
+            <td class="en">"I can send you our privacy documentation and then we can discuss any concerns on a call."</td>
+            <td class="ar">"يمكنني إرسال وثائق الخصوصية الخاصة بنا ومن ثم نناقش أي مخاوف على مكالمة."</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 10. Check with team (unchanged) ========= -->
+    <section id="objection_check_team" class="section">
+      <div class="kicker">10</div>
+      <h2>Objection: Need to check with team</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schedule follow-up</td>
+            <td class="en">"Of course. When would be a good time to reconnect after you've spoken with them? I'll also send an email summary you can share."</td>
+            <td class="ar">"بالتأكيد. متى سيكون الوقت المناسب للتواصل مرة أخرى بعد التحدث معهم؟ سأرسل أيضاً ملخصاً عبر البريد يمكنك مشاركته."</td>
+            <td><a href="#meeting_proposal">Set follow-up</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 11. Email only (unchanged) ========= -->
+    <section id="objection_email_only" class="section">
+      <div class="kicker">11</div>
+      <h2>Objection: Just email me</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Response Option</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Send detailed email</td>
+            <td class="en">"I'll send you a detailed email with my observations, recommendations, and a link to book a call if you'd like to discuss further."</td>
+            <td class="ar">"سأرسل لك بريداً مفصلاً بملاحظاتي وتوصياتي ورابطاً لحجز مكالمة إذا أردت مناقشة المزيد."</td>
+            <td><a href="#voicemail_followup">Follow-up email</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 12. Voicemail & follow-up (unchanged) ========= -->
+    <section id="voicemail_followup" class="section">
+      <div class="kicker">12</div>
+      <h2>Voicemail & follow‑up email</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Node</th>
+            <th>Intent</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>Branching</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12.1</td>
+            <td>Voicemail script</td>
+            <td class="en">"Hi {{Customer_Name}}, this is {{Strategist_Name}} from Snapchat. I've reviewed your account and spotted an opportunity to improve your campaign performance. I'll send you an email with details and a link to schedule a quick call. Hope to connect soon."</td>
+            <td class="ar">"مرحباً {{Customer_Name}}، معك {{Strategist_Name}} من سناب شات. اطلعت على حسابك ورصدت فرصة لتحسين أداء حملاتك. سأرسل لك بريداً بالتفاصيل ورابط لحجز مكالمة سريعة. أتمنى التواصل قريباً."</td>
+            <td><a href="#voicemail_followup">Then send email (12.2)</a></td>
+          </tr>
+          <tr>
+            <td>12.2</td>
+            <td>Follow-up email (recap + link)</td>
+            <td class="en">"Subject: Snapchat account insights & meeting link<br>Hi {{Customer_Name}}, as promised, here's a quick summary: [insert 1-2 lines about the specific issue]. I've set up a calendar link for a 15‑minute strategy session: {{Meeting_Link}}. Let me know if you have any questions."</td>
+            <td class="ar">"الموضوع: ملاحظات حول حساب سناب شات ورابط الاجتماع<br>مرحباً {{Customer_Name}}، كما وعدتك، إليك ملخص سريع: [ضع سطراً عن المشكلة المحددة]. لقد أعددت رابط تقويم لجلسة استراتيجية مدتها ١٥ دقيقة: {{Meeting_Link}}. أخبرني إذا كان لديك أي أسئلة."</td>
+            <td><a href="#closing">End</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 13. Closing (unchanged) ========= -->
+    <section id="closing" class="section">
+      <div class="kicker">13</div>
+      <h2>Closing & next steps</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Node</th>
+            <th>Intent</th>
+            <th class="en">English (EN)</th>
+            <th class="ar">العربية (AR)</th>
+            <th>References</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13.1</td>
+            <td>Confirm meeting & send link</td>
+            <td class="en">"Perfect, I've sent you a calendar invitation. Looking forward to our call on [date/time]. I'll prepare some tailored recommendations."</td>
+            <td class="ar">"ممتاز، لقد أرسلت لك دعوة تقويم. أتطلع لمكالمتنا في [التاريخ/الوقت]. سأحضر بعض التوصيات المخصصة."</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>13.2</td>
+            <td>Ending if not booked</td>
+            <td class="en">"I'll send you an email with my observations and a booking link – feel free to schedule a time at your convenience. Thanks for your time!"</td>
+            <td class="ar">"سأرسل لك بريداً بملاحظاتي ورابط الحجز – يمكنك تحديد وقت يناسبك. شكراً لوقتك!"</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+          <!-- ========== 14. OPPORTUNITY DEEP‑DIVE INFO TABLES (BILINGUAL) ========= -->
+    <section id="deepdive_section" class="section">
+      <div class="kicker">14</div>
+      <h2>Opportunity deep‑dive information</h2>
+      <p class="muted">Use these tables when a customer is unfamiliar with an issue – explain briefly, then steer back to booking.</p>
+
+      <!-- Pixel info -->
+      <table id="info_pixel">
+        <caption>🔍 Pixel not firing / missing · البكسل لا يعمل أو مفقود</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it (meeting) / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">The Snap Pixel is a piece of code that tracks conversions and events on your website. If it's missing or misconfigured, we don't get accurate data.</div><div class="ar">بكسل سناب شات هو جزء من الكود يتتبع التحويلات والأحداث على موقعك. إذا كان مفقودًا أو غير مضبوط بشكل صحيح، لا نحصل على بيانات دقيقة.</div></td>
+            <td><div class="en">Without proper pixel data, campaigns can't optimize for real results, leading to wasted spend and missed opportunities.</div><div class="ar">بدون بيانات البكسل الصحيحة، لا تستطيع الحملات تحسين النتائج الحقيقية، مما يؤدي إلى إنفاق ضائع وفرص ضائعة.</div></td>
+            <td><div class="en">We'll walk through installation, test events, and ensure it captures all key actions (purchase, add to cart, etc.).</div><div class="ar">سنراجع عملية التثبيت، ونختبر الأحداث، ونتأكد من تتبع جميع الإجراءات الرئيسية (شراء، إضافة إلى السلة، إلخ).</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Event quality info -->
+      <table id="info_event_quality">
+        <caption>🔍 Low event quality score · انخفاض جودة الأحداث</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Event quality score measures how reliably your pixel tracks events. A low score (1‑5) means Snapchat's system doesn't trust the data.</div><div class="ar">تقيس جودة الأحداث مدى موثوقية تتبع البكسل للأحداث. الدرجة المنخفضة (1-5) تعني أن نظام سناب شات لا يثق بالبيانات.</div></td>
+            <td><div class="en">Low score leads to reduced delivery, higher CPAs, and limited learning. Fixing it improves campaign performance.</div><div class="ar">الدرجة المنخفضة تؤدي إلى تقليل وصول الحملات، وارتفاع تكلفة التحويل، ومحدودية التعلم. إصلاحها يحسن أداء الحملات.</div></td>
+            <td><div class="en">We'll diagnose why events are low quality (duplicate events, mismatched parameters) and implement fixes like deduplication or CAPI.</div><div class="ar">سنشخص أسباب انخفاض الجودة (أحداث مكررة، معاملات غير متطابقة) ونطبق حلولاً مثل إلغاء التكرار أو CAPI.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Creative fatigue info -->
+      <table id="info_creative">
+        <caption>🔍 Creative fatigue / low CTR · إرهاق الإبداع / انخفاض نسبة النقر</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">When ads run too long without refreshing, audiences stop engaging – CTR drops, frequency rises.</div><div class="ar">عندما تُعرض الإعلانات لفترة طويلة دون تحديث، يتوقف الجمهور عن التفاعل – تنخفض نسبة النقر، ويرتفع التكرار.</div></td>
+            <td><div class="en">Fatigue increases costs and reduces ROAS. Fresh creative re‑engages users and improves performance.</div><div class="ar">الإرهاق يزيد التكاليف ويقلل العائد على الإنفاق. الإبداع الجديد يعيد إشراك المستخدمين ويحسن الأداء.</div></td>
+            <td><div class="en">We'll review your best‑performing creatives, suggest new formats (video, story, collection), and set up a creative testing plan.</div><div class="ar">سنراجع أفضل الإبداعات أداءً، ونقترح صيغًا جديدة (فيديو، ستوري، مجموعة)، ونضع خطة لاختبار الإبداعات.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Budget inefficiency / bidding info -->
+      <table id="info_budget_bidding">
+        <caption>🔍 Budget inefficiency / bidding · عدم كفاءة الميزانية / العطاءات</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Bidding strategy (lowest cost, target cost, max bid) affects how your budget is spent. Using the wrong type can inflate CPA.</div><div class="ar">إستراتيجية العطاءات (أقل تكلفة، تكلفة مستهدفة، أقصى عطاء) تؤثر على كيفية إنفاق الميزانية. استخدام النوع الخطأ قد يضخم تكلفة التحويل.</div></td>
+            <td><div class="en">Aligning bid strategy with your goal ensures you pay the right price for each result.</div><div class="ar">مواءمة إستراتيجية العطاءات مع هدفك يضمن أن تدفع السعر المناسب لكل نتيجة.</div></td>
+            <td><div class="en">We'll analyze your historical data, test different bid strategies, and set up rules to stabilize costs.</div><div class="ar">سنحلل بياناتك التاريخية، ونختبر إستراتيجيات عطاءات مختلفة، ونضع قواعد لتحقيق استقرار التكاليف.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Missing CAPI info -->
+      <table id="info_capi">
+        <caption>🔍 Missing Conversion API (CAPI) · عدم وجود واجهة تحويل</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">CAPI sends conversion data directly from your server to Snapchat, bypassing browser limitations (ad blockers, cookie loss).</div><div class="ar">CAPI يرسل بيانات التحويل مباشرة من خادمك إلى سناب شات، متجاوزًا قيود المتصفح (مانعات الإعلانات، فقدان الكوكيز).</div></td>
+            <td><div class="en">It improves data reliability, event quality, and can increase attributed conversions by 15‑20%.</div><div class="ar">إنه يحسن موثوقية البيانات وجودة الأحداث، ويمكن أن يزيد التحويلات المنسوبة بنسبة 15-20%.</div></td>
+            <td><div class="en">We'll guide you or your dev team through CAPI setup, test connections, and ensure deduplication with pixel.</div><div class="ar">سنرشدك أنت أو فريق التطوير خلال إعداد CAPI، ونختبر الاتصالات، ونتأكد من إلغاء التكرار مع البكسل.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Objective misalignment info -->
+      <table id="info_objective">
+        <caption>🔍 Campaign objective misalignment · عدم توافق هدف الحملة</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Campaign objective (awareness, traffic, conversions) tells Snapchat how to optimize. If it doesn't match your goal, you won't get desired results.</div><div class="ar">هدف الحملة (الوعي، الزيارات، التحويلات) يخبر سناب شات بكيفية التحسين. إذا لم يتطابق مع هدفك، لن تحصل على النتائج المرجوة.</div></td>
+            <td><div class="en">For example, an awareness campaign optimizes for views, not sales. Switching to conversions aligns delivery with your KPI.</div><div class="ar">على سبيل المثال، حملة الوعي تحسّن لعدد المشاهدات، وليس المبيعات. التبديل إلى التحويلات يجعل التسليم متوافقًا مع مؤشر الأداء.</div></td>
+            <td><div class="en">We'll review your current objectives, recommend the correct one, and help you restructure campaigns.</div><div class="ar">سنراجع أهدافك الحالية، ونوصي بالهدف الصحيح، ونساعدك في إعادة هيكلة الحملات.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Audience too broad info -->
+      <table id="info_audience_broad">
+        <caption>🔍 Audience too broad · جمهور واسع جدًا</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">An audience of millions with no targeting layers can be inefficient – you show ads to many irrelevant users.</div><div class="ar">جمهور بالملايين بدون طبقات استهداف يمكن أن يكون غير فعال – أنت تظهر إعلانات للعديد من المستخدمين غير المهتمين.</div></td>
+            <td><div class="en">Broad audiences often have higher CPAs because the algorithm must find the right people. Layering interests or using lookalikes narrows focus.</div><div class="ar">الجماهير الواسعة غالبًا ما يكون لها تكلفة تحويل أعلى لأن الخوارزمية يجب أن تجد الأشخاص المناسبين. إضافة اهتمامات أو استخدام جماهير مشابهة يضيق التركيز.</div></td>
+            <td><div class="en">We'll analyze your customer data, create lookalike audiences, and test interest combinations to improve efficiency.</div><div class="ar">سنحلل بيانات عملائك، وننشئ جماهير مشابهة، ونختبر مجموعات اهتمامات لتحسين الكفاءة.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Attachments info -->
+      <table id="info_attachments">
+        <caption>🔍 Attachments (deep links / product sets) · المرفقات (الروابط العميقة / مجموعات المنتجات)</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Attachments like deep links take users directly to a specific product page; product sets enable dynamic ads.</div><div class="ar">المرفقات مثل الروابط العميقة تأخذ المستخدمين مباشرة إلى صفحة منتج معين؛ مجموعات المنتجات تتيح الإعلانات الديناميكية.</div></td>
+            <td><div class="en">They reduce friction, improve user experience, and boost conversion rates.</div><div class="ar">إنها تقلل الاحتكاك، وتحسن تجربة المستخدم، وتزيد معدلات التحويل.</div></td>
+            <td><div class="en">We'll help you set up deep links, connect your catalog, and enable dynamic ads to show personalized products.</div><div class="ar">سنساعدك في إعداد الروابط العميقة، وربط كتالوجك، وتفعيل الإعلانات الديناميكية لعرض منتجات مخصصة.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Audience too narrow info -->
+      <table id="info_audience_narrow">
+        <caption>🔍 Audience too narrow · جمهور ضيق جدًا</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">A very small audience (e.g., under 500k) limits reach and can cause ad fatigue quickly.</div><div class="ar">جمهور صغير جدًا (مثل أقل من 500 ألف) يحد من الوصول ويمكن أن يسبب إرهاقًا سريعًا للإعلانات.</div></td>
+            <td><div class="en">Narrow targeting prevents scaling and increases frequency, leading to diminishing returns.</div><div class="ar">الاستهداف الضيق يمنع التوسع ويزيد التكرار، مما يؤدي إلى تناقص العوائد.</div></td>
+            <td><div class="en">We'll explore broader interests, suggest expanding geo or demographics, and create lookalike audiences from your customer list to safely widen reach.</div><div class="ar">سنستكشف اهتمامات أوسع، ونقترح توسيع الجغرافيا أو السكان، وننشئ جماهير مشابهة من قائمة عملائك لتوسيع الوصول بأمان.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ad format not optimal info -->
+      <table id="info_ad_format">
+        <caption>🔍 Ad format not optimal · صيغة الإعلان غير مناسبة</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Using only one format (e.g., static images) when Snapchat offers video, story, collection, and dynamic ads.</div><div class="ar">استخدام صيغة واحدة فقط (مثل الصور الثابتة) بينما سناب شات يقدم فيديو، ستوري، مجموعة، وإعلانات ديناميكية.</div></td>
+            <td><div class="en">Different formats engage users differently; video typically drives higher CTR and conversions on Snapchat.</div><div class="ar">الصيغ المختلفة تشرك المستخدمين بطرق مختلفة؛ الفيديو عادةً يحقق نسبة نقر وتحويلات أعلى على سناب شات.</div></td>
+            <td><div class="en">We'll review your creative performance, recommend formats that align with your goal, and help you produce or source new creative.</div><div class="ar">سنراجع أداء إبداعاتك، ونوصي بصيغ تتناسب مع هدفك، ونساعدك في إنتاج أو الحصول على إبداعات جديدة.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bidding strategy irrelevant info -->
+      <table id="info_bidding_irrelevant">
+        <caption>🔍 Bidding strategy irrelevant · إستراتيجية العطاءات غير مناسبة</caption>
+        <thead><tr><th>What it is / ما هو</th><th>Why it matters / لماذا يهم</th><th>How we tackle it / كيف نعالجه</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="en">Using a bidding strategy that doesn't match your objective (e.g., lowest cost for a brand awareness campaign).</div><div class="ar">استخدام إستراتيجية عطاءات لا تتوافق مع هدفك (مثل أقل تكلفة لحملة توعية بالعلامة التجارية).</div></td>
+            <td><div class="en">Wrong bidding can lead to either overspending or underdelivering. The right strategy stabilizes costs and meets your goals.</div><div class="ar">العطاءات الخاطئة قد تؤدي إما إلى الإفراط في الإنفاق أو ضعف التسليم. الإستراتيجية الصحيحة تحقق استقرار التكاليف وتلبي أهدافك.</div></td>
+            <td><div class="en">We'll align your bid strategy with your KPI (e.g., target cost for stable CPA, max bid for volume), test adjustments, and monitor performance.</div><div class="ar">سنوائم إستراتيجية العطاءات مع مؤشر الأداء الخاص بك (مثل التكلفة المستهدفة لتحقيق تكلفة تحويل مستقرة، أقصى عطاء للحجم)، ونختبر التعديلات، ونراقب الأداء.</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 14. OPPORTUNITY DEEP‑DIVE INFO TABLES (NEW) ========= -->
+    <section id="deepdive_section" class="section">
+      <div class="kicker">14</div>
+      <h2>Opportunity deep‑dive information</h2>
+      <p class="muted">Use these tables when a customer is unfamiliar with an issue – explain briefly, then steer back to booking.</p>
+
+      <!-- Pixel info -->
+      <table id="info_pixel">
+        <caption>🔍 Pixel not firing / missing</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it (meeting)</th></tr></thead>
+        <tbody><tr><td>The Snap Pixel is a piece of code that tracks conversions and events on your website. If it's missing or misconfigured, we don't get accurate data.</td><td>Without proper pixel data, campaigns can't optimize for real results, leading to wasted spend and missed opportunities.</td><td>We'll walk through installation, test events, and ensure it captures all key actions (purchase, add to cart, etc.).</td></tr></tbody>
+      </table>
+
+      <!-- Event quality info -->
+      <table id="info_event_quality">
+        <caption>🔍 Low event quality score</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Event quality score measures how reliably your pixel tracks events. A low score (1‑5) means Snapchat's system doesn't trust the data.</td><td>Low score leads to reduced delivery, higher CPAs, and limited learning. Fixing it improves campaign performance.</td><td>We'll diagnose why events are low quality (duplicate events, mismatched parameters) and implement fixes like deduplication or CAPI.</td></tr></tbody>
+      </table>
+
+      <!-- Creative fatigue info -->
+      <table id="info_creative">
+        <caption>🔍 Creative fatigue / low CTR</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>When ads run too long without refreshing, audiences stop engaging – CTR drops, frequency rises.</td><td>Fatigue increases costs and reduces ROAS. Fresh creative re‑engages users and improves performance.</td><td>We'll review your best‑performing creatives, suggest new formats (video, story, collection), and set up a creative testing plan.</td></tr></tbody>
+      </table>
+
+      <!-- Budget inefficiency / bidding info -->
+      <table id="info_budget_bidding">
+        <caption>🔍 Budget inefficiency / bidding</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Bidding strategy (lowest cost, target cost, max bid) affects how your budget is spent. Using the wrong type can inflate CPA.</td><td>Aligning bid strategy with your goal ensures you pay the right price for each result.</td><td>We'll analyze your historical data, test different bid strategies, and set up rules to stabilize costs.</td></tr></tbody>
+      </table>
+
+      <!-- Missing CAPI info -->
+      <table id="info_capi">
+        <caption>🔍 Missing Conversion API (CAPI)</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>CAPI sends conversion data directly from your server to Snapchat, bypassing browser limitations (ad blockers, cookie loss).</td><td>It improves data reliability, event quality, and can increase attributed conversions by 15‑20%.</td><td>We'll guide you or your dev team through CAPI setup, test connections, and ensure deduplication with pixel.</td></tr></tbody>
+      </table>
+
+      <!-- Objective misalignment info -->
+      <table id="info_objective">
+        <caption>🔍 Campaign objective misalignment</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Campaign objective (awareness, traffic, conversions) tells Snapchat how to optimize. If it doesn't match your goal, you won't get desired results.</td><td>For example, an awareness campaign optimizes for views, not sales. Switching to conversions aligns delivery with your KPI.</td><td>We'll review your current objectives, recommend the correct one, and help you restructure campaigns.</td></tr></tbody>
+      </table>
+
+      <!-- Audience too broad info -->
+      <table id="info_audience_broad">
+        <caption>🔍 Audience too broad</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>An audience of millions with no targeting layers can be inefficient – you show ads to many irrelevant users.</td><td>Broad audiences often have higher CPAs because the algorithm must find the right people. Layering interests or using lookalikes narrows focus.</td><td>We'll analyze your customer data, create lookalike audiences, and test interest combinations to improve efficiency.</td></tr></tbody>
+      </table>
+
+      <!-- Attachments info -->
+      <table id="info_attachments">
+        <caption>🔍 Attachments (deep links / product sets)</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Attachments like deep links take users directly to a specific product page; product sets enable dynamic ads.</td><td>They reduce friction, improve user experience, and boost conversion rates.</td><td>We'll help you set up deep links, connect your catalog, and enable dynamic ads to show personalized products.</td></tr></tbody>
+      </table>
+
+      <!-- NEW: Audience too narrow info -->
+      <table id="info_audience_narrow">
+        <caption>🔍 Audience too narrow</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>A very small audience (e.g., under 500k) limits reach and can cause ad fatigue quickly.</td><td>Narrow targeting prevents scaling and increases frequency, leading to diminishing returns.</td><td>We'll explore broader interests, suggest expanding geo or demographics, and create lookalike audiences from your customer list to safely widen reach.</td></tr></tbody>
+      </table>
+
+      <!-- NEW: Ad format not optimal info -->
+      <table id="info_ad_format">
+        <caption>🔍 Ad format not optimal</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Using only one format (e.g., static images) when Snapchat offers video, story, collection, and dynamic ads.</td><td>Different formats engage users differently; video typically drives higher CTR and conversions on Snapchat.</td><td>We'll review your creative performance, recommend formats that align with your goal, and help you produce or source new creative.</td></tr></tbody>
+      </table>
+
+      <!-- NEW: Bidding strategy irrelevant info -->
+      <table id="info_bidding_irrelevant">
+        <caption>🔍 Bidding strategy irrelevant</caption>
+        <thead><tr><th>What it is</th><th>Why it matters</th><th>How we tackle it</th></tr></thead>
+        <tbody><tr><td>Using a bidding strategy that doesn't match your objective (e.g., lowest cost for a brand awareness campaign).</td><td>Wrong bidding can lead to either overspending or underdelivering. The right strategy stabilizes costs and meets your goals.</td><td>We'll align your bid strategy with your KPI (e.g., target cost for stable CPA, max bid for volume), test adjustments, and monitor performance.</td></tr></tbody>
+      </table>
+    </section>
+
+    <!-- ========== 15. QUICK REFERENCE: OBJECTIONS & OPPORTUNITIES (NEW) ========= -->
+    <section id="quick_ref" class="section">
+      <div class="kicker">15</div>
+      <h2>Quick reference: objections & opportunities</h2>
+      <table>
+        <thead><tr><th>Topic</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>Not responsible</td><td><a href="#objection_not_responsible">#4</a></td></tr>
+          <tr><td>No time / busy</td><td><a href="#objection_no_time">#5</a></td></tr>
+          <tr><td>Not interested</td><td><a href="#objection_not_interested">#6</a></td></tr>
+          <tr><td>Already have agency</td><td><a href="#objection_agency">#7</a></td></tr>
+          <tr><td>Budget concerns</td><td><a href="#objection_budget">#8</a></td></tr>
+          <tr><td>Technical / privacy</td><td><a href="#objection_tech">#9</a></td></tr>
+          <tr><td>Need to check with team</td><td><a href="#objection_check_team">#10</a></td></tr>
+          <tr><td>Just email me</td><td><a href="#objection_email_only">#11</a></td></tr>
+          <tr><td>Voicemail / follow‑up</td><td><a href="#voicemail_followup">#12</a></td></tr>
+          <tr><td colspan="2" style="background:#1b2130;"><strong>Opportunity deep‑dive info</strong></td></tr>
+          <tr><td>Pixel not firing</td><td><a href="#info_pixel">info</a></td></tr>
+          <tr><td>Low event quality</td><td><a href="#info_event_quality">info</a></td></tr>
+          <tr><td>Creative fatigue</td><td><a href="#info_creative">info</a></td></tr>
+          <tr><td>Budget inefficiency / bidding</td><td><a href="#info_budget_bidding">info</a></td></tr>
+          <tr><td>Missing CAPI</td><td><a href="#info_capi">info</a></td></tr>
+          <tr><td>Objective misalignment</td><td><a href="#info_objective">info</a></td></tr>
+          <tr><td>Audience too broad</td><td><a href="#info_audience_broad">info</a></td></tr>
+          <tr><td>Attachments</td><td><a href="#info_attachments">info</a></td></tr>
+          <tr><td>Audience too narrow</td><td><a href="#info_audience_narrow">info</a></td></tr>
+          <tr><td>Ad format not optimal</td><td><a href="#info_ad_format">info</a></td></tr>
+          <tr><td>Bidding strategy irrelevant</td><td><a href="#info_bidding_irrelevant">info</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footnote">All tables contain placeholder scripts. Replace {{placeholders}} with actual customer data, and adapt Arabic as needed. Use the branch links to jump non‑linearly. New deep‑dive tables provide quick explanations for uncertain customers.</div>
+    <!-- BUSINESS HELP CENTER LINKS -->
+    <section class="section resource-section" style="margin-top: 40px;">
+      <div class="kicker">Support</div>
+      <h2>Business Help Center</h2>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Relevant resources from Snapchat's official Business Help Center</p>
+      <ul class="resource-list">
+        <li><a href="https://businesshelp.snapchat.com/s/article/campaign-setup?language=en_US" target="_blank">Campaign Setup Guide</a> – Create and configure campaigns for cold prospecting</li>
+        <li><a href="https://businesshelp.snapchat.com/s/article/audience-targeting?language=en_US" target="_blank">Audience Targeting & Segmentation</a> – Reach the right prospects with precision</li>
+        <li><a href="https://businesshelp.snapchat.com/s/article/ad-formats?language=en_US" target="_blank">Ad Formats & Specifications</a> – Best practices for story ads and mobile creatives</li>
+        <li><a href="https://businesshelp.snapchat.com/s/article/landing-pages?language=en_US" target="_blank">Landing Page & Link Setup</a> – Drive traffic to your offer or meeting scheduler</li>
+        <li><a href="https://businesshelp.snapchat.com/s/article/conversion-tracking?language=en_US" target="_blank">Conversion Tracking Setup</a> – Measure call or meeting conversions</li>
+        <li><a href="https://businesshelp.snapchat.com/s/article/campaign-performance?language=en_US" target="_blank">Campaign Performance Analysis</a> – Track metrics for sales-focused campaigns</li>
+      </ul>
+    </section>  </div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snapchat Strategist · Pixel meeting flow (EN/AR)</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    
+
+<header>
+ <h1>Snapchat Strategist · Pixel meeting flow (EN/AR)</h1>
+ <div class="meta">Deep‑dive: Pixel not firing / missing · from open to close</div>
+</header>
+<div class="wrap">
+ <div class="notice">
+ <strong>✔ Purpose:</strong> Guide a meeting focused on fixing a missing or misconfigured Snap Pixel. Includes technical steps, troubleshooting, and next steps. All tables are bilingual (EN/AR). Use the branch links to navigate objections or follow‑up actions.
+ </div>
+
+ <section id="legend" class="legend">
+ <div class="kicker">Legend</div>
+ <h2>How to Navigate</h2>
+ <table>
+ <thead><tr><th>Element</th><th>Description</th></tr></thead>
+ <tbody>
+ <tr><td><span class="chip">Go to →</span></td><td class="muted">Click to jump to referenced section.</td></tr>
+ <tr><td><span class="chip ok">Resolved</span> / <span class="chip warn">Need help</span></td><td class="muted">Branch based on customer's situation.</td></tr>
+ <tr><td>EN / AR cells</td><td class="muted">Scripts you can read verbatim or adapt.</td></tr>
+ </tbody>
+ </table>
+ </section>
+
+ <section id="toc" class="toc">
+ <div class="kicker">Navigation</div>
+ <h2>Meeting stages</h2>
+ <div class="grid">
+ <div>
+ <ul>
+ <li><a href="#opening">1. Opening & agenda</a></li>
+ <li><a href="#verify">2. Pixel status verification</a></li>
+ <li><a href="#tech_steps">3. Technical steps to fix</a></li>
+ </ul>
+ </div>
+ <div>
+ <ul>
+ <li><a href="#troubleshoot">4. Troubleshooting</a></li>
+ <li><a href="#next_steps">5. Next steps & implementation</a></li>
+ <li><a href="#closing">6. Closing & follow‑up</a></li>
+ <li><a href="#quick_ref">7. Quick objections</a></li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- NEW: SUMMARY TABLE FOR QUICK JUMP -->
+ <section id="summary_jump" class="section">
+ <div class="kicker">Quick Reference</div>
+ <h2>Jump to any part of the meeting</h2>
+ <table>
+ <thead><tr><th>Stage</th><th>Link</th></tr></thead>
+ <tbody>
+ <tr><td>Opening & agenda</td><td><a href="#opening">Go to → Opening</a></td></tr>
+ <tr><td>Pixel status verification</td><td><a href="#verify">Go to → Verify</a></td></tr>
+ <tr><td>Technical steps to fix</td><td><a href="#tech_steps">Go to → Tech steps</a></td></tr>
+ <tr><td>Troubleshooting</td><td><a href="#troubleshoot">Go to → Troubleshoot</a></td></tr>
+ <tr><td>Next steps & implementation</td><td><a href="#next_steps">Go to → Next steps</a></td></tr>
+ <tr><td>Closing & follow‑up</td><td><a href="#closing">Go to → Closing</a></td></tr>
+ <tr><td>Quick objections</td><td><a href="#quick_ref">Go to → Objections</a></td></tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 1. OPENING & AGENDA (conversational) -->
+ <section id="opening" class="section">
+ <div class="kicker">1</div>
+ <h2>Opening & agenda</h2>
+ <table>
+ <thead>
+ <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Welcome & context</td>
+ <td class="en">"Thanks for joining me. We’re seeing your Snap Pixel either missing or not firing on key pages – that means we can't measure conversions properly, so campaigns can't optimize for real results. Today I’ll walk you through verifying the setup, picking the fastest way to fix it, and making sure we can start tracking and optimizing your on‑site actions."</td>
+ <td class="ar">"يعطيك العافية، وشكراً على وقتك اليوم. اللي شايفينه عندكم إن <strong>Snap Pixel</strong> يا إمّا مو مركّب أو ما يرسل <strong>events</strong> في صفحات مهمّة—وهذا يخلي القياس ناقص، والحملات ما تقدر تسوي <strong>optimization</strong> على <strong>conversions</strong> الحقيقيّة. اليوم بنمشي خطوة بخطوة: نتأكد من الوضع الحالي، نختار أسرع طريقة تركيب تناسبكم، وبعدها نختبر عشان نتأكد إن كل <strong>on‑site actions</strong> قاعدة تنقاس صح."</td>
+ <td><a href="#verify">Go to → Pixel status verification</a></td>
+ </tr>
+ <tr>
+ <td>Agenda overview</td>
+ <td class="en">"Here’s what we’ll cover: first, we’ll verify exactly what’s happening – is the pixel there, are events firing? Then we’ll decide the best installation method for you (manual, Google Tag Manager, the no‑code Pixel Set Up Tool, a partner integration, or even the Conversion API). After that, we’ll test everything with Snap’s Test Events tool and the Pixel Helper extension. We’ll also look at some common issues and how to fix them, and finally agree on next steps and who does what."</td>
+ <td class="ar">"بشكل سريع، خطتنا كالتالي: أول شي بنسوي <strong>verification</strong>—هل <strong>Snap Pixel</strong> موجود؟ وهل الـ <strong>events</strong> قاعدة <strong>firing</strong>؟ بعدين نحدد أفضل طريقة تركيب لكم: <strong>Manual</strong>، أو <strong>Google Tag Manager (GTM)</strong>، أو <strong>Pixel Set Up Tool</strong> (no‑code)، أو <strong>Partner integration</strong> (زي Shopify)، أو حتى <strong>Conversions API (CAPI)</strong>. بعدها بنسوي <strong>test</strong> باستخدام <strong>Test Events</strong> داخل <strong>Events Manager</strong> ومع <strong>Snap Pixel Helper</strong>. وإذا طلع عندنا أي مشاكل شائعة بنحلّها سوا، وبالأخير نطلع بخطوات واضحة: مين يسوي إيش ومتى."</td>
+ <td></td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 2. PIXEL STATUS VERIFICATION (conversational) -->
+ <section id="verify" class="section">
+ <div class="kicker">2</div>
+ <h2>Pixel status verification</h2>
+ <table>
+ <thead>
+ <tr><th>Action</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Outcome / Branch</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Open the website</td>
+ <td class="en">"Let’s start by opening your website in Chrome. I’ll guide you through two quick checks: first, the Snap Pixel Helper extension, and then the Test Events tool inside Events Manager."</td>
+ <td class="ar">"خلّنا نفتح موقعكم على <strong>Chrome</strong>. بوجّهك لفحصين سريعين: أولاً <strong>Snap Pixel Helper</strong>، وبعدها <strong>Test Events</strong> داخل <strong>Events Manager</strong>."</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>Use Snap Pixel Helper</td>
+ <td class="en">"If you have the <a href="https://businesshelp.snapchat.com/s/article/chrome-helper?language=en_US" target="_blank">Snap Pixel Helper</a> extension, click on it while you’re on your site. It will show whether the pixel is installed and which events and parameters are firing. If nothing appears, that means the pixel isn’t there yet."</td>
+ <td class="ar">"إذا عندك إضافة <a href="https://businesshelp.snapchat.com/s/article/chrome-helper?language=en_US" target="_blank">Snap Pixel Helper</a>، افتحها وإنت داخل الموقع. بتوضح لنا هل <strong>Snap Pixel</strong> مركّب، وأي <strong>events</strong> و <strong>parameters</strong> قاعدة تنرسل. لو ما طلع شيء، غالباً <strong>Snap Pixel</strong> ما تركّب أو ما يشتغل على الصفحة."</td>
+ <td>
+ <div><span class="chip ok">Pixel found, events missing</span> → <a href="#tech_steps">Tech steps</a></div>
+ <div><span class="chip no">No pixel found</span> → <a href="#tech_steps">Installation</a></div>
+ </td>
+ </tr>
+ <tr>
+ <td>Confirm via Test Events</td>
+ <td class="en">"Now let’s go to Ads Manager → <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a>. Click on <strong>Test Events</strong> and enter your site URL. Open the URL from there – any events fired during that session will appear in near real‑time, and they won’t affect your production data."</td>
+ <td class="ar">"الحين نروح <strong>Ads Manager</strong> → <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a>. من فوق يمين اختَر <strong>Test Events</strong> وحط رابط الموقع. افتح الرابط من هناك—أي <strong>events</strong> تطلع خلال هالجلسة بتظهر شبه لحظي، وما راح تأثر على بياناتك الفعلية."</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>Optional: View source</td>
+ <td class="en">"As a backup, you can right‑click and choose 'View Page Source', then search for <code>snaptr</code> or <code>scevent.min.js</code>. That tells us if the base code is in the <code>&lt;head&gt;</code> section."</td>
+ <td class="ar">"ولو نبي تأكيد إضافي، كلك يمين واختر <strong>View Page Source</strong>، وبعدها ابحث عن <code>snaptr</code> أو <code>scevent.min.js</code>. هذا يوضح لنا إذا الـ <strong>base code</strong> موجود داخل <code>&lt;head&gt;</code>."</td>
+ <td></td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 3. TECHNICAL STEPS TO FIX (conversational + links) -->
+ <section id="tech_steps" class="section">
+ <div class="kicker">3</div>
+ <h2>Technical steps to fix</h2>
+ <table>
+ <thead>
+ <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Notes</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Get Pixel ID & base code</td>
+ <td class="en">"First, in Ads Manager go to <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a> → Pixels. If you don’t have a pixel yet, create one; then copy the pixel ID and the base code snippet."</td>
+ <td class="ar">"أول خطوة: من <strong>Ads Manager</strong> ادخل <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a> → <strong>Pixels</strong>. إذا ما عندك <strong>Snap Pixel</strong>، سوّ <strong>Create</strong> واحد. بعدها خذ <strong>Pixel ID</strong> و انسخ الـ <strong>base code</strong>."</td>
+ <td>Ensure proper access</td>
+ </tr>
+ <tr>
+ <td>Choose install path</td>
+ <td class="en">
+ "You have several options to install the pixel – let’s pick the one that’s easiest for you:<br>
+ • <strong>Manual</strong>: Paste the base code into the <code>&lt;head&gt;</code> of every page. <a href="https://businesshelp.snapchat.com/s/article/pixel-direct-implementation?language=en_US" target="_blank">[guide]</a><br>
+ • <strong>Google Tag Manager</strong>: If you use GTM, you can add the native Snap Pixel tag and set it to fire a 'Page View' event on all pages. <a href="https://businesshelp.snapchat.com/s/article/gtm-base-tag?language=en_US" target="_blank">[instructions]</a><br>
+ • <strong>Pixel Set Up Tool (no code)</strong>: After the base code is in place, you can tag URLs or buttons directly from the tool – great for simple sites. <a href="https://businesshelp.snapchat.com/s/article/add-events-pixel-set-up-tool?language=en_US" target="_blank">[details]</a><br>
+ • <strong>Partner integrations</strong>: If you're on Shopify or another platform, you can use their Snapchat app. <a href="https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US" target="_blank">[more]</a>"
+ </td>
+ <td class="ar">
+ "عندك أكثر من خيار لتركيب <strong>Snap Pixel</strong>—خلّنا نختار الأسهل والأسرع لكم:<br>
+ • <strong>Manual</strong>: نلصق الـ <strong>base code</strong> داخل <code>&lt;head&gt;</code> بكل الصفحات. <a href="https://businesshelp.snapchat.com/s/article/pixel-direct-implementation?language=en_US" target="_blank">[دليل]</a><br>
+ • <strong>Google Tag Manager (GTM)</strong>: إذا تستخدم <strong>GTM</strong>، نضيف <strong>Snap Pixel tag</strong> ونخليه يرسل <strong>PAGE_VIEW</strong> على <strong>All Pages</strong>. <a href="https://businesshelp.snapchat.com/s/article/gtm-base-tag?language=en_US" target="_blank">[تعليمات]</a><br>
+ • <strong>Pixel Set Up Tool (no code)</strong>: بعد تركيب الـ <strong>base code</strong>، تقدر تسوي tagging للـ <strong>URLs</strong> أو الأزرار من داخل الأداة—ممتاز للمواقع البسيطة. <a href="https://businesshelp.snapchat.com/s/article/add-events-pixel-set-up-tool?language=en_US" target="_blank">[تفاصيل]</a><br>
+ • <strong>Partner integrations</strong>: لو منصّتكم مثل Shopify، غالباً فيه تكامل جاهز يسهّل كل شي. <a href="https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US" target="_blank">[المزيد]</a>"
+ </td>
+ <td>Pick the quickest compliant route</td>
+ </tr>
+ <tr>
+ <td>Automated Matching</td>
+ <td class="en">"I recommend enabling <strong>Automated Matching</strong> – it hashes email addresses and phone numbers before sending them to Snap, which helps match more conversions and improves your event quality. It’s also required if you plan to use the Pixel Set Up Tool."</td>
+ <td class="ar">"أنصح نفعّل <strong>Automated Matching</strong>—الفكرة إنه يرسل <strong>emails/phones</strong> بشكل <strong>hashed</strong> قبل ما توصل لـ Snap، وهذا يحسّن <strong>matching</strong> وجودة الـ <strong>events</strong>. وبرضه مطلوب لو بتستخدم <strong>Pixel Set Up Tool</strong>."</td>
+ <td>Improves EQS later</td>
+ </tr>
+ <tr>
+ <td>Add standard events</td>
+ <td class="en">"Now we need to track key actions – things like 'PAGE_VIEW', 'ADD_CART', 'PURCHASE'. If you’re coding manually or using GTM, make sure the event names are exactly as Snap expects (uppercase). You can also pass parameters like value, currency, and item IDs to power dynamic ads and ROAS reporting."</td>
+ <td class="ar">"الخطوة الجاية نحدد أهم <strong>actions</strong> عندكم ونرسلها كـ <strong>standard events</strong> زي 'PAGE_VIEW'، 'ADD_CART'، 'PURCHASE'. لو التركيب <strong>Manual</strong> أو عبر <strong>GTM</strong>، لازم أسماء الـ <strong>events</strong> تكون بالضبط وبـ <strong>uppercase</strong>. وبرضه نضيف <strong>parameters</strong> مثل <strong>value</strong> و <strong>currency</strong> و <strong>item_ids</strong> عشان <strong>ROAS</strong> و <strong>Dynamic Ads</strong> يكونون أدق."</td>
+ <td>Add parameters for value, currency, IDs as needed</td> 
+ </tr>
+ <tr>
+ <td>Use Pixel Set Up Tool (URL/Button)</td>
+ <td class="en">"If you prefer a no‑code approach, inside the Pixel Set Up Tool you can create <strong>URL Events</strong> – for example, a rule that fires a 'PURCHASE' event when someone lands on your thank‑you page. Or <strong>Button Events</strong> that fire when a specific button is clicked (like 'Add to Cart'). Don’t forget to add value and currency for those events if you want to track ROAS."</td>
+ <td class="ar">"إذا تبي <strong>no‑code</strong>، داخل <strong>Pixel Set Up Tool</strong> تقدر تسوي <strong>URL Events</strong>—مثلاً يطلق 'PURCHASE' لما العميل يوصل صفحة <strong>thank‑you</strong>. أو <strong>Button Events</strong> لما يضغط زر معيّن مثل “Add to Cart”. ولا تنسى تضيف <strong>value</strong> و <strong>currency</strong> عشان <strong>ROAS</strong> يكون صحيح."</td>
+ <td>Fast, no‑code tagging path</td>
+ </tr>
+ <tr>
+ <td>Test the setup</td>
+ <td class="en">"After installation, let’s test everything using <a href="https://businesshelp.snapchat.com/s/article/pixel-test-event-tool?language=en_US" target="_blank">Test Events</a> – it’ll show you any events fired from your session. Also use the <a href="https://businesshelp.snapchat.com/s/article/chrome-helper?language=en_US" target="_blank">Snap Pixel Helper</a> to double‑check event names and parameters on the live page."</td>
+ <td class="ar">"بعد التركيب، نختبر باستخدام <a href="https://businesshelp.snapchat.com/s/article/pixel-test-event-tool?language=en_US" target="_blank">Test Events</a> عشان نشوف <strong>events</strong> اللي تطلع من جلستك. وبعدها نتأكد كمان من <a href="https://businesshelp.snapchat.com/s/article/chrome-helper?language=en_US" target="_blank">Snap Pixel Helper</a> على الصفحة <strong>live</strong>، ونتحقق من أسماء الـ <strong>events</strong> والـ <strong>parameters</strong>."</td>
+ <td><a href="#troubleshoot">If tests fail → troubleshooting</a></td>
+ </tr>
+ <tr>
+ <td>Improve signal quality</td>
+ <td class="en">"Once events are coming in, check the <strong>Event Quality Score</strong> in Events Manager. If it’s low, the system will give you recommendations – like passing more customer identifiers or enabling automated matching. Following those tips will help your campaigns perform better."</td>
+ <td class="ar">"بعد ما تبدأ الـ <strong>events</strong> توصل، خلّنا نراجع <strong>Event Quality Score (EQS)</strong> داخل <strong>Events Manager</strong>. لو منخفض، بيطلع لك <strong>recommendations</strong> مثل تفعيل <strong>Automated Matching</strong> أو تمرير <strong>identifiers</strong> أكثر. تطبيق هالتوصيات غالباً يرفع <strong>performance</strong>."</td>
+ <td>Higher EQS → better matching</td>
+ </tr>
+ <tr>
+ <td>Optional: Add CAPI (server‑side)</td>
+ <td class="en">"For even more reliable tracking – especially with ad blockers and browser restrictions – I suggest adding the <strong>Conversions API (CAPI)</strong> alongside your pixel. It sends data directly from your server. We’ll also set up <strong>deduplication</strong> so you don’t count the same conversion twice."</td>
+ <td class="ar">"ولو تبغى تتبّع أدق—خصوصاً مع <strong>ad blockers</strong> وقيود المتصفح—نقدر نضيف <strong>Conversions API (CAPI)</strong> جنب <strong>Snap Pixel</strong>. كذا البيانات تجي <strong>server‑side</strong>. وبرضه بنفعّل <strong>deduplication</strong> عشان ما نحسب نفس <strong>conversion</strong> مرتين."</td>
+ <td>Recommended for scale & privacy</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 4. TROUBLESHOOTING (conversational) -->
+ <section id="troubleshoot" class="section">
+ <div class="kicker">4</div>
+ <h2>Troubleshooting common issues</h2>
+ <table>
+ <thead>
+ <tr><th>Issue</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Fix</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Pixel installed but no events</td>
+ <td class="en">"If the pixel is there but you’re not seeing events, double‑check that your event triggers are set up correctly – for example, a URL rule might need a specific keyword like 'thank-you'. Use Test Events and Pixel Helper to confirm the exact moment the event should fire."</td>
+ <td class="ar">"إذا <strong>Snap Pixel</strong> موجود بس ما نشوف <strong>events</strong>، غالباً المشكلة في <strong>trigger</strong>. مثلاً <strong>URL rule</strong> ممكن يحتاج كلمة معيّنة مثل 'thank-you'. خلّنا نستخدم <strong>Test Events</strong> و <strong>Snap Pixel Helper</strong> عشان نحدد بالضبط متى المفروض الحدث يطلق."</td>
+ <td>Check page URL rules or button selector in the tool</td>
+ </tr>
+ <tr>
+ <td>Wrong Pixel ID / not shared</td>
+ <td class="en">"Make sure the Pixel ID in your code matches the one in Events Manager. If you have multiple ad accounts or a Business Manager, the pixel might need to be <strong>shared</strong> with the right account. You can manage sharing in Business Manager settings."</td>
+ <td class="ar">"تأكد إن <strong>Pixel ID</strong> اللي بالكود هو نفسه اللي في <strong>Events Manager</strong>. وإذا عندكم أكثر من <strong>ad account</strong> أو <strong>Business Manager</strong>، ممكن <strong>Snap Pixel</strong> يحتاج يكون <strong>shared</strong> للحساب الصحيح. تقدر تعدّل المشاركة من إعدادات <strong>Business Manager</strong>."</td>
+ <td>Share/unshare in Business Manager as needed</td>
+ </tr>
+ <tr>
+ <td>Ad blockers / CSP / script not loading</td>
+ <td class="en">"Sometimes ad blockers or content security policies prevent the pixel from loading. Try testing in an incognito window with extensions disabled. You can also open Developer Tools → Network and look for <code>scevent.min.js</code> – if it’s blocked, you may need to allow <code>sc-static.net</code> in your CSP."</td>
+ <td class="ar">"أحياناً <strong>ad blockers</strong> أو <strong>Content Security Policy</strong> تمنع تحميل السكربت. جرّب <strong>Incognito</strong> مع تعطيل الإضافات. ومن <strong>Developer Tools</strong> → <strong>Network</strong> ابحث عن <code>scevent.min.js</code>—إذا كان <strong>blocked</strong>، غالباً تحتاج تسمح للدومين <code>sc-static.net</code> داخل الـ <strong>CSP</strong>."</td>
+ <td>Re‑test with Pixel Helper</td>
+ </tr>
+ <tr>
+ <td>Duplicate events</td>
+ <td class="en">"If you see the same event twice (e.g., from both pixel and CAPI), we need to enable deduplication using <code>event_id</code>. Snapchat uses this ID to match and remove duplicates. Also avoid having overlapping URL rules and button rules that could fire the same event."</td>
+ <td class="ar">"لو تشوف نفس <strong>event</strong> مرتين (مثلاً من <strong>Snap Pixel</strong> ومن <strong>CAPI</strong>)، لازم نفعّل <strong>deduplication</strong> باستخدام <code>event_id</code>. Snap يستخدم هالـ ID عشان يدمج الأحداث ويشيل التكرار. وبرضه نتأكد ما فيه <strong>URL rules</strong> و <strong>Button rules</strong> متداخلة تطلق نفس الحدث."</td>
+ <td>Use Events Manager → guidance on dedup</td>
+ </tr>
+ <tr>
+ <td>Event syntax / casing</td>
+ <td class="en">"Standard event names are case‑sensitive – for example, you must write <code>PURCHASE</code> (all caps) not <code>purchase</code>. If you use a different casing, Snap won’t recognise it as a standard event."</td>
+ <td class="ar">"الـ <strong>standard event names</strong> حسّاسة لحالة الأحرف: لازم <code>PURCHASE</code> (uppercase) مو <code>purchase</code>. إذا تغيّرت الكتابة، Snap ما راح يتعرّف عليه كـ <strong>standard event</strong>."</td>
+ <td>Correct naming and re-test</td>
+ </tr>
+ <tr>
+ <td>Low signal quality</td>
+ <td class="en">"If your Event Quality Score is low, it means Snap isn’t getting enough reliable data from your events. The fix is usually to enable Automated Matching, pass more customer identifiers (like email or phone), and follow the recommendations in Events Manager."</td>
+ <td class="ar">"إذا <strong>EQS</strong> منخفض، يعني Snap ما قاعد يستقبل <strong>signals</strong> كفاية عشان يعمل <strong>matching</strong> قوي. الحل غالباً: تفعيل <strong>Automated Matching</strong>، وتمرير <strong>identifiers</strong> أكثر (email/phone)، واتباع <strong>recommendations</strong> داخل <strong>Events Manager</strong>."</td>
+ <td>Follow EQS recommendations</td>
+ </tr>
+ <tr>
+ <td>Pixel not on all pages</td>
+ <td class="en">"For accurate tracking, the pixel needs to load on every page. If you’re using a CMS, make sure the base code is in your global header or footer. With GTM, ensure the tag fires on all pages, not just a few."</td>
+ <td class="ar">"عشان القياس يكون مضبوط، <strong>Snap Pixel</strong> لازم يشتغل بكل الصفحات. إذا عندكم <strong>CMS</strong>، خلّوا الـ <strong>base code</strong> في الـ global header/footer. ومع <strong>GTM</strong> تأكد إن التاغ <strong>Fire</strong> على <strong>All Pages</strong> مو على صفحات محددة."</td>
+ <td>Check theme/header includes</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 5. NEXT STEPS & IMPLEMENTATION PLAN (conversational) -->
+ <section id="next_steps" class="section">
+ <div class="kicker">5</div>
+ <h2>Next steps & implementation plan</h2>
+ <table>
+ <thead>
+ <tr><th>Action</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Owner</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Pick install path & implement</td>
+ <td class="en">"Based on what we discussed, let’s decide the fastest path for you – whether that’s manual code, GTM, the no‑code tool, or a partner integration. If you need developer help, we can loop them in now, or I can guide you through the steps yourself."</td>
+ <td class="ar">"بناءً على اللي شفناه، خلّنا نختار أسرع طريقة لكم—<strong>Manual</strong> أو <strong>GTM</strong> أو <strong>Pixel Set Up Tool</strong> أو <strong>Partner integration</strong>. وإذا تحتاجون مطوّر، نقدر ندخلهم معنا الآن، أو أمشي معكم خطوة بخطوة."</td>
+ <td>Customer / Dev</td>
+ </tr>
+ <tr>
+ <td>Verify & test</td>
+ <td class="en">"After implementation, please run the Test Events tool and check Pixel Helper again to confirm everything works. I’ll also be able to see incoming events in Events Manager from my side."</td>
+ <td class="ar">"بعد التنفيذ، شغّل <strong>Test Events</strong> وتأكد من <strong>Snap Pixel Helper</strong> مرة ثانية. ومن جهتي أنا بعد بقدر أشوف الـ <strong>events</strong> وهي داخلة في <strong>Events Manager</strong>."</td>
+ <td>Customer (guided)</td>
+ </tr>
+ <tr>
+ <td>Strengthen signals</td>
+ <td class="en">"Once the basic events are flowing, we can look at improving your Event Quality Score – maybe by enabling Automated Matching or adding more customer identifiers. If you’re ready, we can also explore setting up the Conversions API for even better tracking."</td>
+ <td class="ar">"بعد ما تتأكد الـ <strong>events</strong> الأساسية شغّالة، نرفع الجودة: نراجع <strong>EQS</strong>، نفعل <strong>Automated Matching</strong>، ونضيف <strong>identifiers</strong> أكثر. وإذا تبغى مستوى أقوى، نقدر نخطط لـ <strong>CAPI</strong>."</td>
+ <td>Both</td>
+ </tr>
+ <tr>
+ <td>Follow‑up</td>
+ <td class="en">"Let’s schedule a quick follow‑up in a few days to make sure everything is running smoothly and to address any questions. I’ll send you a calendar invite."</td>
+ <td class="ar">"خلّنا نحجز <strong>follow‑up</strong> سريع بعد كم يوم نتأكد إن كل شيء تمام ونرد على أي أسئلة. بأرسل لك <strong>calendar invite</strong>."</td>
+ <td>Both</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 6. CLOSING & FOLLOW-UP (conversational) -->
+ <section id="closing" class="section">
+ <div class="kicker">6</div>
+ <h2>Closing & follow‑up</h2>
+ <table>
+ <thead>
+ <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Branch</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Summarize</td>
+ <td class="en">"Great – so we’ve verified your current setup, agreed on the installation method, and planned the next steps. Once the pixel is firing consistently, your campaigns will be able to optimize for real conversions, and we can start improving your event quality score."</td>
+ <td class="ar">"ممتاز—تأكدنا من الوضع الحالي، وحددنا طريقة التركيب، واتفقنا على الخطوات الجاية. أول ما يصير <strong>Snap Pixel</strong> يرسل <strong>events</strong> بشكل ثابت، حملاتك بتقدر تسوي <strong>optimization</strong> على <strong>conversions</strong> الحقيقيّة، ونبدأ نرفع <strong>EQS</strong>."</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>Send email</td>
+ <td class="en">"I’ll send you a summary email within the hour – it’ll include the pixel code, links to the tools we discussed, and any specific instructions for your platform. You’ll also find a link to book a follow‑up if you prefer a different time."</td>
+ <td class="ar">"بأرسل لك ملخص خلال ساعة—فيه الـ <strong>pixel code</strong>، وروابط الأدوات اللي ذكرناها، وخطوات تناسب منصّتكم. وبرضه بحط لك رابط لحجز <strong>follow‑up</strong> لو تبغى وقت ثاني."</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>Confirm timeline</td>
+ <td class="en">"When do you think you’ll be able to implement these changes? I’ll note it down and check back around that time."</td>
+ <td class="ar">"متى تتوقعون تقدرون تنفذون التغييرات؟ عشان أحددها وأتابع معكم على هالتوقيت."</td>
+ <td>#quick_refIf objections → quick ref</a></td>
+ </tr>
+ <tr>
+ <td>Final thanks</td>
+ <td class="en">"Thank you again for your time. I’m confident this will make a big difference in your campaign performance. Talk soon!"</td>
+ <td class="ar">"يعطيكم العافية على وقتكم. واثق إن هالخطوة بتفرق كثير في أداء الحملات. نتواصل قريب!"</td>
+ <td></td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- 7. QUICK OBJECTIONS DURING MEETING (conversational) -->
+ <section id="quick_ref" class="section">
+ <div class="kicker">7</div>
+ <h2>Quick objections during meeting</h2>
+ <table>
+ <thead>
+ <tr><th>Objection</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>"I don't have a developer"</td>
+ <td class="en">"No problem at all. We can use the <strong>Pixel Set Up Tool</strong> to add events without writing any code, or if you’re on Shopify, the Snapchat app handles everything automatically. I can also walk you through GTM if you’re comfortable with that."</td>
+ <td class="ar">"تمام، ما فيه أي مشكلة. نقدر نستخدم <strong>Pixel Set Up Tool</strong> عشان نضيف <strong>events</strong> بدون كود، ولو أنتم على Shopify فيه <strong>Partner integration</strong> يسويها تلقائي. وإذا تحبون، أمشي معكم على <strong>GTM</strong> خطوة بخطوة."</td>
+ <td>#tech_stepsContinue with simpler method</a></td>
+ </tr>
+ <tr>
+ <td>"I'm too busy to implement"</td>
+ <td class="en">"I understand completely. How about I send you a very concise one‑page guide with your exact steps, and we can schedule a 15‑minute working session where we implement it together?"</td>
+ <td class="ar">"فاهم عليك. أبغى أرسل لك <strong>one‑pager</strong> مختصر جداً بالخطوات اللي تخصّكم، ونحجز جلسة 15 دقيقة نطبّقها سوا—كذا نخلصها بسرعة."</td>
+ <td>#next_stepsSend email + follow-up</a></td>
+ </tr>
+ <tr>
+ <td>"Will this really make a difference?"</td>
+ <td class="en">"Absolutely – the pixel (and optionally CAPI) is the foundation of measurement and optimisation. Without it, Snapchat doesn’t know which users converted, so it can’t find similar people or optimise your bids. With it, you’ll typically see lower CPAs and better ROAS."</td>
+ <td class="ar">"أكيد—<strong>Snap Pixel</strong> (وممكن <strong>CAPI</strong>) هو أساس القياس والـ <strong>optimisation</strong>. بدونه، Snap ما يعرف مين سوّى <strong>conversion</strong>، فما يقدر يعلّم النظام ويجيب ناس مشابهين أو يضبط الـ <strong>bidding</strong>. ومعه غالباً تشوف <strong>CPA</strong> أقل و <strong>ROAS</strong> أفضل."</td>
+ <td>#tech_stepsProceed</a></td>
+ </tr>
+ <tr>
+ <td>"What about privacy?"</td>
+ <td class="en">"Great question. Snapchat takes privacy seriously – Automated Matching hashes all personal data before sending it, so we never receive raw emails or phones. You’re always in control of what you share, and you can check your Event Quality Score to ensure signals are healthy."</td>
+ <td class="ar">"سؤال ممتاز. الخصوصية عند Snap مهمة—<strong>Automated Matching</strong> يرسل البيانات بشكل <strong>hashed</strong> قبل ما تنرسل، فما نوصل للـ <strong>emails</strong> أو الأرقام بشكل خام. وإنت تتحكم وش ترسل، ونراجع <strong>EQS</strong> عشان نتأكد إن <strong>signals</strong> صحّية."</td>
+ <td>#tech_stepsSignal best practices</a></td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <div class="footnote">
+ Replace placeholders with actual customer data. Use the branch links to navigate non‑linearly. This flow is designed to be practical and confidence‑building.
+ </div>
+
+ <!-- BUSINESS HELP CENTER LINKS -->
+ <section class="section resource-section" style="margin-top: 40px;">
+ <div class="kicker">Support</div>
+ <h2>Business Help Center</h2>
+ <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Relevant resources from Snapchat's official Business Help Center</p>
+ <ul class="resource-list">
+ <li><a href="https://businesshelp.snapchat.com/s/article/events-manager-pixel-details?language=en_US" target="_blank">Pixel Details in Events Manager</a> – Setup, validation, and pixel status monitoring</li>
+ <li><a href="https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US" target="_blank">Getting Started with Enabling the Pixel</a> – Step-by-step installation methods & best practices</li>
+ <li><a href="https://businesshelp.snapchat.com/s/article/conversions-api?language=en_US" target="_blank">What is Conversions API (CAPI)?</a> – Advanced tracking without relying on client-side pixel</li>
+ <li><a href="https://businesshelp.snapchat.com/s/article/pixel-test-event-tool?language=en_US" target="_blank">Send Test With Pixel Test Event Tool</a> – Validate implementation before going live</li>
+ <li><a href="https://businesshelp.snapchat.com/s/article/pixel-verify-implementation?language=en_US" target="_blank">Verify Pixel Implementation</a> – Common validation steps after setup</li>
+ <li><a href="https://businesshelp.snapchat.com/s/article/pixel-faqs?language=en_US" target="_blank">Snap Pixel FAQs (Automated Matching)</a> – Automated Matching overview & best practices</li>
+ </ul>
+ </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Snapchat Strategist · Low EQS meeting flow (EN/AR)</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<header>
+  <h1>Snapchat Strategist · Low EQS meeting flow (EN/AR)</h1>
+  <div class="meta">Deep‑dive: Event Quality Score low / how to diagnose & fix · from open to close</div>
+</header>
+
+<div class="wrap">
+  <div class="notice">
+    <strong>✔ Purpose:</strong> Run a focused meeting to diagnose a <em>Low Event Quality Score</em> (EQS) and raise it to “Good”. The flow covers verification in Events Manager, concrete fixes (identity signals, Automated Matching, CAPI + dedup), troubleshooting, and next steps. EQS is visible per event (e.g., PURCHASE) and per integration (Pixel, CAPI, MMP). <a href="https://taggrs.io/docs/server-side-tracking/snapchat/snap-pixel" target="_blank">[2]</a> <a href="https://businesshelp.snapchat.com/s/article/events-manager-pixel-details?language=en_US" target="_blank">[1]</a>
+  </div>
+
+  <section id="legend" class="legend">
+    <div class="kicker">Legend</div>
+    <h2>How to Navigate</h2>
+    <table>
+      <thead><tr><th>Element</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip">Go to →</span></td><td class="muted">Click to jump to referenced section.</td></tr>
+        <tr><td><span class="chip ok">Resolved</span> / <span class="chip warn">Need help</span></td><td class="muted">Branch based on customer's situation.</td></tr>
+        <tr><td>EN / AR cells</td><td class="muted">Scripts you can read verbatim or adapt.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="toc" class="toc">
+    <div class="kicker">Navigation</div>
+    <h2>Meeting stages</h2>
+    <div class="grid">
+      <div>
+        <ul>
+          <li><a href="#opening">1. Opening &amp; agenda</a></li>
+          <li><a href="#verify">2. EQS status verification</a></li>
+          <li><a href="#tech_steps">3. Technical steps to improve</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#troubleshoot">4. Troubleshooting</a></li>
+          <li><a href="#next_steps">5. Next steps &amp; implementation</a></li>
+          <li><a href="#closing">6. Closing &amp; follow‑up</a></li>
+          <li><a href="#quick_ref">7. Quick objections</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SUMMARY TABLE FOR QUICK JUMP -->
+  <section id="summary_jump" class="section">
+    <div class="kicker">Quick Reference</div>
+    <h2>Jump to any part of the meeting</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>Opening & agenda</td><td><a href="#opening">Go to → Opening</a></td></tr>
+        <tr><td>EQS status verification</td><td><a href="#verify">Go to → Verify</a></td></tr>
+        <tr><td>Technical steps to improve</td><td><a href="#tech_steps">Go to → Tech steps</a></td></tr>
+        <tr><td>Troubleshooting</td><td><a href="#troubleshoot">Go to → Troubleshoot</a></td></tr>
+        <tr><td>Next steps & implementation</td><td><a href="#next_steps">Go to → Next steps</a></td></tr>
+        <tr><td>Closing & follow‑up</td><td><a href="#closing">Go to → Closing</a></td></tr>
+        <tr><td>Quick objections</td><td><a href="#quick_ref">Go to → Objections</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 1. OPENING & AGENDA (conversational) -->
+  <section id="opening" class="section">
+    <div class="kicker">1</div>
+    <h2>Opening &amp; agenda</h2>
+    <table>
+      <thead>
+        <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Welcome &amp; context</td>
+          <td class="en">"Thanks for joining. I’ve been looking at your Event Quality Score – it’s currently lower than we’d like, which means our identity signals aren’t matching as effectively to Snapchat accounts. That can limit how well your campaigns can optimize. Today we’ll pinpoint exactly why in <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a> and implement the highest‑impact fixes to bring that score up."</td>
+          <td class="ar">"شكراً لانضمامك. لقد اطلعت على درجة جودة الحدث (EQS) لديك – وهي حالياً أقل من المطلوب، مما يعني أن إشارات الهوية لا تتطابق بكفاءة مع حسابات سناب شات. هذا قد يحد من قدرة حملاتك على التحسين. اليوم سنحدد السبب بالضبط في <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">مدير الأحداث</a> وننفذ أقوى الإصلاحات تأثيراً لرفع هذه الدرجة."</td>
+          <td><a href="#verify">Go to → EQS status verification</a></td>
+        </tr>
+        <tr>
+          <td>Agenda overview</td>
+          <td class="en">"Here’s what we’ll cover: first, we’ll locate your EQS and any specific issues in Events Manager. Then we’ll look at improving identity signals – things like hashed email and phone, making sure they’re passed on enough events. We’ll enable Automated Matching, and if needed, add the Conversions API with deduplication. Finally, we’ll agree on next steps and who’s doing what."</td>
+          <td class="ar">"إليك ما سنغطيه: أولاً، سنحدد EQS والمشكلات المحددة في مدير الأحداث. ثم سننظر في تحسين إشارات الهوية – مثل البريد الإلكتروني ورقم الهاتف المهشَّرين، والتأكد من تمريرهما في عدد كافٍ من الأحداث. سنفعّل المطابقة التلقائية، وإذا لزم الأمر، نضيف واجهة التحويلات مع إزالة التكرار. وأخيراً، نتفق على الخطوات التالية والمسؤوليات."</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2. EQS STATUS VERIFICATION (conversational) -->
+  <section id="verify" class="section">
+    <div class="kicker">2</div>
+    <h2>EQS status verification</h2>
+    <table>
+      <thead>
+        <tr><th>Action</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Outcome / Branch</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open Events Manager</td>
+          <td class="en">"Let’s go to Ads Manager → <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a>. Choose your event source – it could be your Pixel or a CAPI connection. On the overview page, you’ll see EQS next to each event, along with any recommendations from Snapchat."</td>
+          <td class="ar">"دعنا نذهب إلى مدير الإعلانات → <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">مدير الأحداث</a>. اختر مصدر الأحداث – قد يكون البكسل الخاص بك أو اتصال CAPI. في صفحة النظرة العامة، سترى EQS بجانب كل حدث، مع أي توصيات من سناب شات."</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>View EQS details</td>
+          <td class="en">"Click into a specific event, like PURCHASE. A drawer will open showing you the parameters being sent, the current EQS, and a section called ‘Issues & Recommendations’. That’s our to‑do list."</td>
+          <td class="ar">"انقر على حدث محدد، مثل PURCHASE. ستفتح لوحة جانبية تعرض المعاملات المرسلة، وEQS الحالي، وقسماً يسمى 'المشكلات والتوصيات'. هذه هي قائمة مهامنا."</td>
+          <td>
+            <div><span class="chip ok">EQS ≥ 6 (“Good”)</span> → <a href="#next_steps">Plan monitoring</a></div>
+            <div><span class="chip warn">EQS 3–6 (“Needs work”)</span> → <a href="#tech_steps">Improve</a></div>
+            <div><span class="chip no">EQS &lt; 3 (“Poor”)</span> → <a href="#tech_steps">Priority fixes</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Confirm event volume</td>
+          <td class="en">"If EQS shows 'N/A', it means there isn’t enough recent data for that event yet. We can send a test event or check back after a day or two of normal traffic."</td>
+          <td class="ar">"إذا ظهر EQS على أنه 'غير متوفر'، فهذا يعني أنه لا توجد بيانات حديثة كافية لذلك الحدث بعد. يمكننا إرسال حدث اختباري أو التحقق مرة أخرى بعد يوم أو يومين من الزيارات العادية."</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. TECHNICAL STEPS TO IMPROVE (conversational) -->
+  <section id="tech_steps" class="section">
+    <div class="kicker">3</div>
+    <h2>Technical steps to improve</h2>
+    <table>
+      <thead>
+        <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prioritize identity parameters</td>
+          <td class="en">"The most powerful signals for matching are email and phone. If you’re sending them, make sure they’re hashed correctly (SHA‑256). If not, let’s add them – they can increase your match rate significantly."</td>
+          <td class="ar">"أقوى الإشارات للمطابقة هي البريد الإلكتروني والهاتف. إذا كنت ترسلهما، فتأكد من تهشيرهما بشكل صحيح (SHA‑256). إذا لم تكن ترسلهما، فلنضفهما – يمكن أن يزيدا نسبة المطابقة بشكل كبير."</td>
+          <td>Ensure correct hashing when using CAPI/SDK</td>
+        </tr>
+
+        <tr>
+          <td>Increase coverage</td>
+          <td class="en">"If Events Manager says ‘Increase coverage’, it means one of these identifiers is missing on more than 20% of events. Let’s look at where that happens – maybe users aren’t logged in, or forms aren’t capturing the data. We need to pass the identifier on at least 80% of those key events."</td>
+          <td class="ar">"إذا قال مدير الأحداث 'زيادة التغطية'، فهذا يعني أن أحد هذه المعرّفات مفقود في أكثر من 20% من الأحداث. دعنا ننظر أين يحدث ذلك – ربما المستخدمون غير مسجلين الدخول، أو أن النماذج لا تلتقط البيانات. نحتاج إلى تمرير المعرّف في 80% على الأقل من تلك الأحداث الرئيسية."</td>
+          <td>Coverage issues are highlighted per parameter in EQS UI</td>
+        </tr>
+
+        <tr>
+          <td>Enable Automated Matching</td>
+          <td class="en">"Have you enabled <a href="https://businesshelp.snapchat.com/s/article/snap-pixel-about" target="_blank">Automated Matching</a>? It lets Snapchat securely detect emails and phones from form submissions, which can fill gaps when you can’t pass them manually. It’s a quick win."</td>
+          <td class="ar">"هل فعّلت <a href="https://businesshelp.snapchat.com/s/article/snap-pixel-about" target="_blank">المطابقة التلقائية</a>؟ تتيح لسناب شات اكتشاف البريد الإلكتروني والهاتف بشكل آمن من إرسالات النماذج، مما يسد الفجوات عندما لا تستطيع تمريرها يدوياً. إنها مكسب سريع."</td>
+          <td>Required when using Pixel Set Up Tool</td>
+        </tr>
+
+        <tr>
+          <td>Reduce hash errors</td>
+          <td class="en">"Sometimes we see ‘hash errors’ – for example, when we try to hash an empty value or a placeholder like 'test@test.com'. Let’s make sure we only hash real user data. Using Snap’s <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Business SDK</a> can handle this automatically."</td>
+          <td class="ar">"أحياناً نرى 'أخطاء تهشير' – على سبيل المثال، عندما نحاول تهشير قيمة فارغة أو وهمية مثل 'test@test.com'. دعنا نتأكد من أننا نهشّر بيانات المستخدم الحقيقية فقط. استخدام <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Business SDK</a> من سناب يمكنه التعامل مع هذا تلقائياً."</td>
+          <td>Business SDK simplifies hashing & auth for CAPI v3</td>
+        </tr>
+
+        <tr>
+          <td>Fix formatting & duplicates</td>
+          <td class="en">"Check for issues like sending the same identifier multiple times in one event, or using formats that aren’t normalized (e.g., inconsistent country codes). Clean data matches better."</td>
+          <td class="ar">"تحقق من مشكلات مثل إرسال نفس المعرّف عدة مرات في حدث واحد، أو استخدام تنسيقات غير موحدة (مثل رموز دول غير متناسقة). البيانات النظيفة تطابق بشكل أفضل."</td>
+          <td>Check EQS ‘Issues & Recommendations’ per event</td>
+        </tr>
+
+        <tr>
+          <td>Add CAPI v3 (+ dedup)</td>
+          <td class="en">"If you’re only using the Pixel, adding the <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Conversions API (CAPI)</a> gives us a server‑to‑server connection that’s more resilient to browser restrictions. And when you have both Pixel and CAPI, we need to set up <strong>deduplication</strong> using <code>event_id</code> so we don’t count the same conversion twice."</td>
+          <td class="ar">"إذا كنت تستخدم البكسل فقط، فإن إضافة <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">واجهة التحويلات (CAPI)</a> تعطينا اتصالاً من خادم إلى خادم أكثر مقاومة لقيود المتصفح. وعندما يكون لديك كل من البكسل وCAPI، نحتاج إلى إعداد <strong>إزالة التكرار</strong> باستخدام <code>event_id</code> حتى لا نحتسب نفس التحويل مرتين."</td>
+          <td>Configure dedup in Events Manager & payloads</td>
+        </tr>
+
+        <tr>
+          <td>Check EQS again</td>
+          <td class="en">"After we implement these changes, let’s come back to Events Manager and look at that same event. The score should move up, and the recommendations list should shrink. We’ll keep monitoring until it hits 'Good'."</td>
+          <td class="ar">"بعد أن ننفذ هذه التغييرات، دعنا نعود إلى مدير الأحداث وننظر إلى نفس الحدث. يجب أن ترتفع الدرجة، وتقل قائمة التوصيات. سنستمر في المراقبة حتى تصل إلى 'جيد'."</td>
+          <td>Good ≈ ≥6; OK 3–6; Poor &lt;3</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. TROUBLESHOOTING (conversational) -->
+  <section id="troubleshoot" class="section">
+    <div class="kicker">4</div>
+    <h2>Troubleshooting common EQS issues</h2>
+    <table>
+      <thead>
+        <tr><th>Issue</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Fix</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Coverage too low</td>
+          <td class="en">"If you’re seeing 'coverage' warnings, the identifier (email/phone) isn’t present on enough events. We need to make sure it’s passed on key pages like checkout, registration, and thank‑you pages. Sometimes it’s about ensuring the user is logged in when the event fires."</td>
+          <td class="ar">"إذا كنت ترى تحذيرات 'التغطية'، فإن المعرّف (البريد/الهاتف) غير موجود في عدد كافٍ من الأحداث. نحتاج إلى التأكد من تمريره في الصفحات الرئيسية مثل الدفع والتسجيل وصفحات الشكر. أحياناً يتعلق الأمر بضمان تسجيل دخول المستخدم عند إطلاق الحدث."</td>
+          <td>Re‑test EQS per event</td>
+        </tr>
+
+        <tr>
+          <td>Hashing/format errors</td>
+          <td class="en">"Don’t hash blank or null values – just don’t send the parameter at all if it’s missing. Also strip spaces, normalize email addresses to lowercase, and use consistent country codes for phone numbers. The <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Business SDK</a> can help avoid these mistakes."</td>
+          <td class="ar">"لا تُهشّر القيم الفارغة أو الباطلة – فقط لا ترسل المعامل إذا كان مفقوداً. أيضاً أزل المسافات، وطبع عناوين البريد الإلكتروني بأحرف صغيرة، واستخدم رموز دول متناسقة لأرقام الهاتف. يمكن أن يساعد <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Business SDK</a> في تجنب هذه الأخطاء."</td>
+          <td>Re‑send test events; check parameters</td>
+        </tr>
+
+        <tr>
+          <td>Duplicate identifiers</td>
+          <td class="en">"If the same conversion is being sent from both your Pixel and CAPI without deduplication, you’ll see duplicate events and potentially lower EQS. We need to implement <code>event_id</code> – a unique ID for each conversion – and turn on deduplication in Events Manager."</td>
+          <td class="ar">"إذا تم إرسال نفس التحويل من كل من البكسل وCAPI دون إزالة التكرار، سترى أحداثاً مكررة وربما انخفاض EQS. نحتاج إلى تنفيذ <code>event_id</code> – معرّف فريد لكل تحويل – وتفعيل إزالة التكرار في مدير الأحداث."</td>
+          <td>Check ‘Event Deduplication’ guidance in Events Manager</td>
+        </tr>
+
+        <tr>
+          <td>IP obfuscation</td>
+          <td class="en">"Browsers and platforms are increasingly hiding IP addresses, which can affect matching. That’s one reason we recommend adding CAPI – it sends data directly from your server, preserving those signals."</td>
+          <td class="ar">"تقوم المتصفحات والمنصات بشكل متزايد بإخفاء عناوين IP، مما قد يؤثر على المطابقة. هذا أحد الأسباب التي تجعلنا نوصي بإضافة CAPI – فهو يرسل البيانات مباشرة من خادمك، محافظاً على تلك الإشارات."</td>
+          <td>Implement/verify CAPI v3</td>
+        </tr>
+
+        <tr>
+          <td>Can’t find EQS</td>
+          <td class="en">"If you don’t see EQS at all, make sure you’re looking at a specific event source (Pixel or CAPI) in Events Manager, and that there’s been some event activity recently. If it’s a brand‑new pixel, give it a few days."</td>
+          <td class="ar">"إذا كنت لا ترى EQS على الإطلاق، تأكد من أنك تنظر إلى مصدر حدث محدد (بكسل أو CAPI) في مدير الأحداث، وأنه كان هناك نشاط حدث مؤخراً. إذا كان بكسل جديداً تماماً، أعطه بضعة أيام."</td>
+          <td>Ensure recent data exists (N/A until events arrive)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. NEXT STEPS & IMPLEMENTATION PLAN (conversational) -->
+  <section id="next_steps" class="section">
+    <div class="kicker">5</div>
+    <h2>Next steps &amp; implementation plan</h2>
+    <table>
+      <thead>
+        <tr><th>Action</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Implement fixes</td>
+          <td class="en">"Based on what we saw, we’ll focus on: passing email/phone on more events, enabling Automated Matching, and adding CAPI with deduplication. I’ll send you the exact steps for each."</td>
+          <td class="ar">"بناءً على ما رأيناه، سنركز على: تمرير البريد/الهاتف في المزيد من الأحداث، وتفعيل المطابقة التلقائية، وإضافة CAPI مع إزالة التكرار. سأرسل لك الخطوات الدقيقة لكل منها."</td>
+          <td>Customer / Dev</td>
+        </tr>
+        <tr>
+          <td>Verify improvements</td>
+          <td class="en">"After you’ve made the changes, let’s revisit Events Manager together – either in a follow‑up call or you can check and let me know. We’re aiming for that score to hit 6 or higher."</td>
+          <td class="ar">"بعد إجراء التغييرات، دعنا نعود إلى مدير الأحداث معاً – إما في مكالمة متابعة أو يمكنك التحقق وإخباري. نهدف إلى وصول الدرجة إلى 6 أو أعلى."</td>
+          <td>Customer (guided)</td>
+        </tr>
+        <tr>
+          <td>Monitor & optimize</td>
+          <td class="en">"EQS isn’t a one‑time fix – it’s something we should keep an eye on. I’ll check in periodically, and you can always see it in Events Manager. Healthy signals mean better campaign performance."</td>
+          <td class="ar">"EQS ليس إصلاحاً لمرة واحدة – بل شيء يجب أن نراقبه. سأتولى المتابعة دورياً، ويمكنك دائماً رؤيته في مدير الأحداث. الإشارات السليمة تعني أداء أفضل للحملات."</td>
+          <td>Both</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. CLOSING & FOLLOW-UP (conversational) -->
+  <section id="closing" class="section">
+    <div class="kicker">6</div>
+    <h2>Closing &amp; follow‑up</h2>
+    <table>
+      <thead>
+        <tr><th>Step</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Branch</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Summarize</td>
+          <td class="en">"Great – we’ve identified the reasons your EQS is low, agreed on the fixes (better identity signals, Automated Matching, CAPI), and set a plan. Once these are in place, your campaigns will have much stronger data to optimize on."</td>
+          <td class="ar">"رائع – لقد حددنا أسباب انخفاض EQS لديك، واتفقنا على الإصلاحات (إشارات هوية أفضل، مطابقة تلقائية، CAPI)، ووضعنا خطة. بمجرد تنفيذها، ستحصل حملاتك على بيانات أقوى بكثير للتحسين."</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Send email</td>
+          <td class="en">"I’ll send you an email within the hour with a summary, screenshots from Events Manager, and links to the resources we discussed – including the CAPI setup guide and deduplication steps."</td>
+          <td class="ar">"سأرسل لك بريداً خلال ساعة يتضمن ملخصاً، ولقطات من مدير الأحداث، وروابط للموارد التي ناقشناها – بما في ذلك دليل إعداد CAPI وخطوات إزالة التكرار."</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Confirm timeline</td>
+          <td class="en">"When do you think you’ll be able to implement these changes? I’ll note it and we can schedule a follow‑up to verify the score has improved."</td>
+          <td class="ar">"متى تعتقد أنك ستتمكن من تنفيذ هذه التغييرات؟ سأدوّن ذلك ويمكننا تحديد موعد متابعة للتحقق من تحسن الدرجة."</td>
+          <td><a href="#quick_ref">If objections → quick ref</a></td>
+        </tr>
+        <tr>
+          <td>Final thanks</td>
+          <td class="en">"Thank you again – I’m confident these improvements will make a real difference in your campaign efficiency. Talk soon!"</td>
+          <td class="ar">"شكراً جزيلاً مرة أخرى – أنا واثق أن هذه التحسينات ستحدث فرقاً حقيقياً في كفاءة حملاتك. نتحدث قريباً!"</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. QUICK OBJECTIONS DURING MEETING (conversational) -->
+  <section id="quick_ref" class="section">
+    <div class="kicker">7</div>
+    <h2>Quick objections during meeting</h2>
+    <table>
+      <thead>
+        <tr><th>Objection</th><th class="en">English (EN)</th><th class="ar">العربية (AR)</th><th>Next</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"We can’t pass emails/phones"</td>
+          <td class="en">"I understand – sometimes privacy or technical constraints make that hard. In that case, let’s rely on Automated Matching to capture them from forms, and we can also use other signals like IP and user agent. CAPI can still help by sending those server‑side."</td>
+          <td class="ar">"أتفهم – أحياناً تجعل قيود الخصوصية أو التقنية ذلك صعباً. في هذه الحالة، دعنا نعتمد على المطابقة التلقائية لالتقاطها من النماذج، ويمكننا أيضاً استخدام إشارات أخرى مثل IP ووكيل المستخدم. لا يزال بإمكان CAPI المساعدة بإرسال تلك الإشارات من الخادم."</td>
+          <td><a href="#tech_steps">Proceed with AM + CAPI</a></td>
+        </tr>
+        <tr>
+          <td>"Why does EQS matter?"</td>
+          <td class="en">"Great question. EQS tells us how likely Snapchat is to match an event to a real user account. When it’s low, fewer conversions are matched, so our delivery system has less data to learn from. Raising it means more accurate optimization and better ROAS."</td>
+          <td class="ar">"سؤال رائع. EQS يخبرنا بمدى احتمالية مطابقة حدث معين لحساب مستخدم حقيقي على سناب شات. عندما يكون منخفضاً، يتم مطابقة عدد أقل من التحويلات، لذا فإن نظام التسليم لديه بيانات أقل للتعلم منها. رفعه يعني تحسيناً أكثر دقة وعائداً أفضل على الإنفاق."</td>
+          <td><a href="#verify">Show EQS in Events Manager</a></td>
+        </tr>
+        <tr>
+          <td>"We already have the Pixel"</td>
+          <td class="en">"Perfect – the Pixel is a great start. Adding CAPI alongside it gives us a second, more reliable path for data, especially as browsers phase out third‑party cookies. With deduplication, we get the best of both worlds."</td>
+          <td class="ar">"ممتاز – البكسل بداية رائعة. إضافة CAPI إلى جانبه يعطينا مساراً ثانياً أكثر موثوقية للبيانات، خاصة مع تخلص المتصفحات من ملفات تعريف الارتباط الخارجية. مع إزالة التكرار، نحصل على أفضل ما في العالمين."</td>
+          <td><a href="#tech_steps">Add CAPI</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footnote">
+    Resources: <a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager</a> ·
+    <a href="https://businesshelp.snapchat.com/s/topic/0TO8b000000P90TGAS/event-quality-score?language=en_US" target="_blank">Event Quality Score (EQS)</a> ·
+    <a href="https://developers.snap.com/api/marketing-api/Conversions-API/Introduction" target="_blank">Conversions API v3</a> ·
+    Internal: SMC EQS Training Q1 2024, Improve EQS.
+  </div>
+
+  <!-- BUSINESS HELP CENTER LINKS -->
+  <section class="section resource-section" style="margin-top: 40px;">
+    <div class="kicker">Support</div>
+    <h2>Business Help Center</h2>
+    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Relevant resources from Snapchat's official Business Help Center</p>
+    <ul class="resource-list">
+      <li><a href="https://businesshelp.snapchat.com/s/article/events-manager?language=en_US" target="_blank">Events Manager Overview</a> – Setup and monitor pixel & API events</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/event-quality-score?language=en_US" target="_blank">Event Quality Score (EQS) Explained</a> – What EQS means and how to improve it</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/identity-matching?language=en_US" target="_blank">Identity Matching & Signals</a> – Collecting first-party data to boost EQS</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/automated-matching?language=en_US" target="_blank">Automated Matching (AM)</a> – Hashing and matching customer data safely</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/conversion-api?language=en_US" target="_blank">Conversion API (Server-Side Tracking)</a> – Send events directly from your server</li>
+      <li><a href="https://businesshelp.snapchat.com/s/article/troubleshooting-eqs?language=en_US" target="_blank">Troubleshooting Low EQS</a> – Diagnose and fix quality issues</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
