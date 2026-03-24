@@ -8,6 +8,10 @@
   
 </head>
 <body>
+  <div class="fixed-toolbar">
+  <button onclick="toggleTheme()" title="Switch theme">🌓</button>
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" title="Back to top">↑</button>
+</div>
   <header>
     <h1>Snapchat Strategist</h1>
     <div class="meta">Resource Hub · Meeting guides, frameworks & technical deep‑dives</div>
@@ -234,18 +238,19 @@
       </ul>
     </section>
 
-    <section class="section" style="margin-top: 32px; padding: 20px; background: linear-gradient(135deg, #1b2130 0%, #151923 100%);">
+    <section class="section guide-card" style="margin-top: 32px; padding: 20px;">
       <div class="kicker">Getting Started</div>
       <h2>How to Use These Guides</h2>
       <div style="margin-top: 12px; font-size: 0.95rem; line-height: 1.6;">
         <p><strong>Before your meeting:</strong> Select the relevant guide and review the agenda. Note any sections marked with <span class="badge">quick reference</span> tags.</p>
         <p><strong>During the meeting:</strong> Use the bilingual scripts as-is or adapt them to your style. Click internal links to navigate objections or branches.</p>
         <p><strong>After the meeting:</strong> Share the relevant section links with the customer and use the implementation checklist to track progress.</p>
-        <p style="margin-top: 16px; color: var(--muted); font-size: 0.85rem;">💡 <strong>Tip:</strong> All guides are optimized for desktop and mobile. Bookmark this index to return anytime.</p>
       </div>
     </section>
   </div>
-<script src="main.js"></script>
+<script src="main.js">
+
+</script>
 
 </body>
 </html>
