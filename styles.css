@@ -325,31 +325,30 @@ td {
 }
 
 /* Fixed left toolbar */
-.fixed-toolbar {
-  position: fixed;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+.sticky-toolbar {
+  position: sticky;
+  top: 20px; /* distance from top when sticky */
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  z-index: 1000;
+  z-index: 100;
   background: var(--card);
-  backdrop-filter: blur(8px);
-  background-color: rgba(var(--card-rgb), 0.85);
   border: 1px solid var(--border);
   border-radius: 32px;
   padding: 12px 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: background 0.2s;
+  clear: left;
 }
 
-/* If you prefer solid background, remove backdrop-filter and use var(--card) directly */
-.fixed-toolbar button {
+.sticky-toolbar button {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 40px;
-  width: 44px;
+  width: 144px;
   height: 44px;
   font-size: 1.2rem;
   cursor: pointer;
@@ -360,7 +359,7 @@ td {
   justify-content: center;
 }
 
-.fixed-toolbar button:hover {
+.sticky-toolbar button:hover {
   background: var(--border);
   transform: scale(1.05);
 }
