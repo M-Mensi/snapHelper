@@ -327,7 +327,9 @@ td {
 /* Fixed left toolbar */
 .sticky-toolbar {
   position: sticky;
-  top: 20px; /* distance from top when sticky */
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
